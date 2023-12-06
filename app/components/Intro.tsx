@@ -4,13 +4,13 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { jsxElementToString } from "../utils/functions"
 import { motion } from "framer-motion"
+import { IntroTexts, Links } from "../types"
 
-function Intro(){
+function Intro({links}: {links: Links}){
 
   //STATES
   //The amount of useStates must be equal to the number of introTextsData Elements
-  interface IntroTexts {[key:string]: React.JSX.Element|string}
-  const [introTexts, setIntroTexts] = useState<IntroTexts>(
+   const [introTexts, setIntroTexts] = useState<IntroTexts>(
     {introText0: "", introText1:"", introText2:"", introText3:"", introText4:""}
   )
   const [showCursorsClass, setShowCursorsClass] = useState<boolean[]>([
@@ -32,21 +32,21 @@ function Intro(){
     <>hola mundo!</>,
 
     <>me llamo  <motion.span {...animationProps} animate={{ color: "#FFF" }}>
-        <Link href="/"> Aleix Alsina</Link>
+        <Link href={links.homepage.href}> Aleix Alsina</Link>
       </motion.span>
     </>,
 
     <>soy <motion.span {...animationProps} animate={{ color: "#F66" }}>frontend developer</motion.span></>,
 
     <>si has llegado hasta mi web posiblemente sea porque quieres saber más <motion.span {...animationProps} animate={{ color: "#Ffb366" }} style={{textDecoration: "underline"}}>
-          <Link href="/about">sobre mi</Link>
+          <Link href={links.aboutme.href}>{links.aboutme.title}</Link>
       </motion.span>
     </>,
     
     <>Aquí podrás encontrar un portafolio con todos los <motion.span {...animationProps} animate={{ color: "#6f6"}} style={{textDecoration: "underline"}}>
-          <Link href="/projects"> proyectos</Link>
+          <Link href={links.projects.href}>{links.projects.title}</Link>
       </motion.span> donde he trabajado, así como un detallado listado de mis <motion.span {...animationProps} animate={{ color: "#6ff"}} style={{textDecoration: "underline"}}>
-        <Link href="/skills">habilidades</Link>
+        <Link href={links.skills.href}>{links.skills.title}</Link>
       </motion.span>
     </>
   ] 
