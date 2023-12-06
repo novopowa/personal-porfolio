@@ -25,3 +25,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+/*Intro text*/
+
+.intro p{
+  text-underline-offset: 6px;
+}
+
+.cursor::after{
+  position: absolute;
+  content: "_";
+  font-weight: 100;
+}
+
