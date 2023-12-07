@@ -9,8 +9,8 @@ import { IntroTexts, Links } from "../types"
 function Intro({links}: {links: Links}){
 
   //STATES
-  //The amount of useStates must be equal to the number of introTextsData Elements
-   const [introTexts, setIntroTexts] = useState<IntroTexts>(
+  //The amount of introTexts must be equal to the number of introTextsData Elements
+  const [introTexts, setIntroTexts] = useState<IntroTexts>(
     {introText0: "", introText1:"", introText2:"", introText3:"", introText4:""}
   )
   const [showCursorsClass, setShowCursorsClass] = useState<boolean[]>([
@@ -55,35 +55,35 @@ function Intro({links}: {links: Links}){
   //INTRO TEXTS USE EFFECT
   useEffect(() => { 
 
-    const showPrompt = async (key: string) => {
-      setIntroTexts((currentIntroTexts) => { return {...currentIntroTexts, [key]: prompt }})
+    const showPrompt = async (dataKey: string) => {
+      setIntroTexts((currentIntroTexts) => { return {...currentIntroTexts, [dataKey]: prompt }})
       await new Promise(resolve => setTimeout(resolve, 1200))
     }
 
-    const showTextLetterByLetter = async (key: string, index: number) => {
-      let introTextData: string = jsxElementToString(introTextsData[index])
-      for (let i=0; i<introTextData.length; i++) {
+    const showTextLetterByLetter = async (dataKey: string, stateIndex: number) => {
+      let introTextDataString: string = jsxElementToString(introTextsData[stateIndex])
+      for (let i=0; i<introTextDataString.length; i++) {
         setIntroTexts((currentIntroTexts) => { 
-          return {...currentIntroTexts, [key]: currentIntroTexts[key] + introTextData[i] }
+          return {...currentIntroTexts, [dataKey]: currentIntroTexts[dataKey] + introTextDataString[i] }
         })
         await new Promise(resolve => setTimeout(resolve, 60))
       }
     }
 
-    const changeStringIntroToJSX = async (key: string, index: number) => {
+    const changeStringIntroToJSX = async (dataKey: string, stateIndex: number) => {
       setIntroTexts((currentIntroTexts) => { 
         return {...currentIntroTexts, 
-          [key]:<motion.span {...animationProps} >{prompt}{introTextsData[index]}</motion.span>
+          [dataKey]:<motion.span {...animationProps} >{prompt}{introTextsData[stateIndex]}</motion.span>
         }
       })
     }
 
     const showIntro = async () => {
-      let index = introTextIndex.current
-      let introTextKey = `introText${index}`
-      await showPrompt(introTextKey)
-      await showTextLetterByLetter(introTextKey, index)
-      changeStringIntroToJSX(introTextKey, index)
+      let stateIndex = introTextIndex.current
+      let dataKey = `introText${stateIndex}`
+      await showPrompt(dataKey)
+      await showTextLetterByLetter(dataKey, stateIndex)
+      changeStringIntroToJSX(dataKey, stateIndex)
       introTextIndex.current++
     }
 
@@ -102,8 +102,7 @@ function Intro({links}: {links: Links}){
   useEffect(()=>{
     const cursorAnimate = async () => {
       await new Promise(resolve => setTimeout(resolve, 450))
-      if(!(introTextIndex.current >= showCursorsClass.length &&
-        showCursorsClass.every(value => !value))){
+      if(!(introTextIndex.current >= showCursorsClass.length && showCursorsClass.every(value => !value))){
         setShowCursorsClass(currentCursor => { 
           return currentCursor.map((cursor, index) => {
             return introTextIndex.current === index ? !cursor : false
@@ -118,8 +117,8 @@ function Intro({links}: {links: Links}){
   //RENDER
   return(
     <div className="intro font-bold p-4 sm:p-6 text-lg sm:text-3xl flex-1 w-[23rem] sm:w-[36rem]">
-      {Object.keys(introTexts).map((key, index) => {
-        return <p key={index} className={`block mb-6 ${showCursorsClass[index] ? "cursor": ""}`}>{introTexts[key]}</p>
+      {Object.keys(introTexts).map((dataKey, i) => {
+        return <p key={i} className={`block mb-6 ${showCursorsClass[i] ? "cursor": ""}`}>{introTexts[dataKey]}</p>
       })}
     </div>
   )
