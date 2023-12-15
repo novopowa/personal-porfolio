@@ -15,24 +15,26 @@ export const metadata: Metadata = {
   description: 'The portfolio of Aleix Alsina, Frontend Developer.',
 }
 
-export const links:Links = {
+const links:Links = {
   homepage: {title: "homepage", href: "/"},
-  aboutme: {title: "sobre mi", href: "/about"},
-  projects: {title: "proyectos", href: "/projects"},
-  skills: {title: "habilidades", href: "/skills"},
-  contact: {title: "contacto", href: "/contact"}
+  aboutme: {title: "sobre mi", href: "#about"},
+  projects: {title: "proyectos", href: "#projects"},
+  skills: {title: "habilidades", href: "#skills"},
+  contact: {title: "contacto", href: "#contact"},
+  github: {title: "", href: "https://github.com/novopowa/"},
+  linkedin: {title: "", href: "https://www.linkedin.com/in/aleix-alsina-rossell-60b14863"}
 }
+
+const h1: string = "AleixAlsina.dev"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={major.className}>
         <div className="flex min-h-screen flex-col lg:flex-row">
-          <Header links={links} />
+          <Header h1={h1} links={links} />
           <main className="flex-1 bg-slate-700">
-            <div className="min-h-[95%]">
-              {children}
-            </div>
+            {children}
             <Footer />
           </main>
         </div>

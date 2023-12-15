@@ -2,22 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+
+  /* Intro */
+  --frontend-developer-color: #f66;
+  
+  /* Main menu */
+  --about-me-color: #ffb366;
+  --projects-color: #6f6;
+  --skills-color: #6ff;
+  --contact-color: #fff;
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(255, 255, 255);
   background: linear-gradient(
       to bottom,
       transparent,
@@ -26,13 +29,74 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
-/*Intro text*/
-
-.intro p{
+a{
+  position: relative;
+  text-decoration: underline;
   text-underline-offset: 6px;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
+
+/*Main menu*/
+.main-menu a{
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity .3s ease-in-out;
+  white-space: nowrap;
+}
+.main-menu a::before {
+  content: '';
+  position: absolute;
+  width: calc(100% + 32px);
+  height: 6px;
+  top: -3px;
+  left: -15px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+.main-menu a:hover{
+  opacity: 1;
+}
+.main-menu a.aboutme:hover{
+  color: var(--about-me-color);
+}
+.main-menu a.projects:hover{
+  color: var(--projects-color);
+}
+.main-menu a.skills:hover{
+  color: var(--skills-color);
+}
+.main-menu a.contact:hover{
+  color: var(--contact-color);
+}
+
+.main-menu a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.main-menu a.aboutme::before{
+  background-color: var(--about-me-color);
+}
+.main-menu a.projects::before{
+  background-color: var(--projects-color);
+}
+.main-menu a.skills::before{
+  background-color: var(--skills-color);
+}
+.main-menu a.contact::before{
+  background-color: var(--contact-color);
+}
+
+
+
+
+
+
+/*Intro text*/
 .cursor::after{
   position: absolute;
   content: "_";

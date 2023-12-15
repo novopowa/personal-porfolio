@@ -32,20 +32,20 @@ function Intro({links}: {links: Links}){
     <>hola mundo!</>,
 
     <>me llamo  <motion.span {...animationProps} animate={{ color: "#FFF" }}>
-        <Link href={links.homepage.href}> Aleix Alsina</Link>
+        <Link href={links.homepage.href} style={{ textDecoration: "none" }}> Aleix Alsina</Link>
       </motion.span>
     </>,
 
-    <>soy <motion.span {...animationProps} animate={{ color: "#F66" }}>frontend developer</motion.span></>,
+    <>soy <motion.span {...animationProps} animate={{ color: "var(--frontend-developer-color)" }}>frontend developer</motion.span></>,
 
-    <>si has llegado hasta mi web posiblemente sea porque quieres saber más <motion.span {...animationProps} animate={{ color: "#Ffb366" }} style={{textDecoration: "underline"}}>
+    <>si has llegado hasta mi web posiblemente sea porque quieres saber más <motion.span {...animationProps} animate={{ color: "var(--about-me-color)" }}>
           <Link href={links.aboutme.href}>{links.aboutme.title}</Link>
       </motion.span>
     </>,
     
-    <>Aquí podrás encontrar un portafolio con todos los <motion.span {...animationProps} animate={{ color: "#6f6"}} style={{textDecoration: "underline"}}>
+    <>Aquí podrás encontrar un portafolio con todos los <motion.span {...animationProps} animate={{ color: "var(--projects-color)"}}>
           <Link href={links.projects.href}>{links.projects.title}</Link>
-      </motion.span> donde he trabajado, así como un detallado listado de mis <motion.span {...animationProps} animate={{ color: "#6ff"}} style={{textDecoration: "underline"}}>
+      </motion.span> donde he trabajado, así como un detallado listado de mis <motion.span {...animationProps} animate={{ color: "var(--skills-color)"}}>
         <Link href={links.skills.href}>{links.skills.title}</Link>
       </motion.span>
     </>
