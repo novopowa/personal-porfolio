@@ -22,7 +22,7 @@ function Intro({links}: {links: Links}){
 
   //ANIMATION GENERAL CONFIG
   const animationProps = {
-      animate: {color: "#444" },
+      animate: {color: "#666" },
       transition: { ease: 'easeOut', duration: 10 },
   }
 

@@ -4,8 +4,7 @@
 
 
 :root {
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --main-background-color: #202731;
 
   /* Intro */
   --frontend-developer-color: #f66;
@@ -21,13 +20,24 @@
 
 body {
   color: rgb(255, 255, 255);
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--main-background-color);
 }
+
+
+/*Pages*/
+section.aboutme{
+  background-color: var(--about-me-color);
+}
+section.projects{
+  background-color: var(--projects-color);
+}
+
+section.skills{
+  background-color: var(--skills-color);
+}
+
+
+
 
 a{
   position: relative;
