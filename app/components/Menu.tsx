@@ -103,21 +103,21 @@ function Menu({h1, links}: {h1: string, links: Links}){
             animate={menuH1Controls}
             transition={{...animationProps.transition}} className="flex items-center flex-shrink-0 text-white mr-6 -translate-y-8">
             <h1 className="font-bold inline px-4 pt-2">
-              <Link href={links.homepage.href}>{h1}</Link>
+              <a href={links.homepage.href}>{h1}</a>
             </h1>
           </motion.div>
           <ul className="flex flex-col justify-between">
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[0]}} className="px-3 pl-0 mt-3 -translate-x-40">
-              <Link className="inline-block py-2 px-4 w-full aboutme" href={links.aboutme.href}>{links.aboutme.title}</Link>
+              <a className="inline-block py-2 px-4 w-full aboutme" href={links.aboutme.href}>{links.aboutme.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[1]}} className="px-3 pl-0 -translate-x-40">
-              <Link className="inline-block py-2 px-4 w-full projects" href={links.projects.href}>{links.projects.title}</Link>
+              <a className="inline-block py-2 px-4 w-full projects" href={links.projects.href}>{links.projects.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[2]}} className="px-3 pl-0 -translate-x-40">
-              <Link className="inline-block py-2 px-4 w-full skills" href={links.skills.href}>{links.skills.title}</Link>
+              <a className="inline-block py-2 px-4 w-full skills" href={links.skills.href}>{links.skills.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[3]}} className="px-3 pl-0 -translate-x-40">
-              <Link className="inline-block py-2 px-4 w-full contact" href={links.contact.href}>{links.contact.title}</Link>
+              <a className="inline-block py-2 px-4 w-full contact" href={links.contact.href}>{links.contact.title}</a>
             </motion.li>
           </ul>
           <div className="flex pb-3 pt-3">
@@ -138,16 +138,16 @@ function Menu({h1, links}: {h1: string, links: Links}){
       <nav className={`main-menu flex-col h-auto p-4 static hidden sm:flex`}>
         <ul className="flex flex-row justify-between">
           <li className="px-3 pl-0 mt-0">
-            <Link className="inline-block py-2 aboutme" href={links.aboutme.href}>{links.aboutme.title}</Link>
+            <a className="inline-block py-2 aboutme" href={links.aboutme.href}>{links.aboutme.title}</a>
           </li>
           <li className="px-3 pl-3 ">
-            <Link className="inline-block py-2 projects" href={links.projects.href}>{links.projects.title}</Link>
+            <a className="inline-block py-2 projects" href={links.projects.href}>{links.projects.title}</a>
           </li>
           <li className="px-3 pl-3">
-            <Link className="inline-block py-2 skills" href={links.skills.href}>{links.skills.title}</Link>
+            <a className="inline-block py-2 skills" href={links.skills.href}>{links.skills.title}</a>
           </li>
           <li className="px-3 pl-3 ">
-            <Link className="inline-block py-2 contact" href={links.contact.href}>{links.contact.title}</Link>
+            <a className="inline-block py-2 contact" href={links.contact.href}>{links.contact.title}</a>
           </li>
         </ul>
         <div className="flex pt-3">

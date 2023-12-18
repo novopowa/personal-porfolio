@@ -1,11 +1,8 @@
-"use client"
-
-import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion"
 import { ReactNode, useRef } from "react"
 
 function Background({ children }:{ children: ReactNode }){
 
-    const scrollRef = useRef<HTMLElement>(null)
+    /*const scrollRef = useRef<HTMLElement>(null)
 
     const {scrollYProgress} = useScroll({
       container: scrollRef
@@ -19,7 +16,7 @@ function Background({ children }:{ children: ReactNode }){
 
     
     return(
-      <main ref={scrollRef} className="flex-1 bg-cover bg-left background-aboutme relative overflow-auto">
+      <main className="flex-1 bg-cover bg-left background-aboutme relative overflow-auto">
           {children}
       </main>
     )

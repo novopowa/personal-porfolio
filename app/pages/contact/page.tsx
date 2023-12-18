@@ -1,6 +1,6 @@
 function Contact(){
     return(
-        <section className="contact min-h-screen">
+        <section id="contacto" className="contact min-h-screen">
             contact
         </section>
     )
