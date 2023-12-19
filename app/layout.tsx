@@ -10,7 +10,7 @@ import Background from './components/Background'
 import Start from './pages/start/page'
 import AboutMe from './pages/about/page'
 import Projects from './pages/projects/page'
-import Experience from './pages/eperience/page'
+import Experience from './pages/experience/page'
 import Contact from './pages/contact/page'
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ const links:Links = {
 
 const h1: string = "AleixAlsina.dev"
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout() {
   return (
     <html lang="es">
       <body>

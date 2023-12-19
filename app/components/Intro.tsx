@@ -39,14 +39,14 @@ function Intro({links}: {links: Links}){
     <>soy <motion.span {...animationProps} animate={{ color: "var(--frontend-developer-color)" }}>frontend developer</motion.span></>,
 
     <>si has llegado hasta mi web posiblemente sea porque quieres saber más <motion.span {...animationProps} animate={{ color: "var(--about-me-color)" }}>
-          <a href={links.aboutme.href}>{links.aboutme.title}</a>
+          <a className="intro-link about" href={links.aboutme.href}><span>{links.aboutme.title}</span></a>
       </motion.span>
     </>,
     
     <>Aquí podrás encontrar un portafolio con todos los <motion.span {...animationProps} animate={{ color: "var(--projects-color)"}}>
-          <a href={links.projects.href}>{links.projects.title}</a>
+          <a className="intro-link projects" href={links.projects.href}><span>{links.projects.title}</span></a>
       </motion.span> donde he trabajado, así como un detallado listado de mi&nbsp; <motion.span {...animationProps} animate={{ color: "var(--skills-color)"}}>
-        <a href={links.skills.href}>{links.skills.title}</a>
+        <a className="intro-link skills" href={links.skills.href}><span>{links.skills.title}</span></a>
       </motion.span>
     </>
   ] 

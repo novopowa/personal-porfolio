@@ -1,17 +1,11 @@
 import { Links } from '@/app/types'
+import { calculateAge } from '@/app/utils/functions'
 import { Bungee_Outline } from 'next/font/google'
 import Link from 'next/link'
 
 const bungeeOutline = Bungee_Outline({ subsets: ['latin'], weight: '400' })
 
 function About({links}: {links: Links}){
-
-  const calculateAge = (birthyear: number): string => {
-    const currentDate: Date = new Date()
-    const currentYear: number = currentDate.getFullYear()
-    const age: number = currentYear-birthyear 
-    return age.toString()
-  }
 
   return(
     <section id="sobre-mi" className="page aboutme min-h-screen relative flex flex-col justify-center">

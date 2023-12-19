@@ -80,23 +80,23 @@ a:hover{
   transform: scaleX(0);
   transition: transform .3s ease-in-out;
 }
-.main-menu a:hover{
+.main-menu a:hover, .main-menu a.selected{
   opacity: 1;
 }
-.main-menu a.aboutme:hover{
+.main-menu a.aboutme:hover, .main-menu a.aboutme.selected{
   color: var(--about-me-color);
 }
-.main-menu a.projects:hover{
+.main-menu a.projects:hover, .main-menu a.projects.selected{
   color: var(--projects-color);
 }
-.main-menu a.skills:hover{
+.main-menu a.skills:hover, .main-menu a.skills.selected{
   color: var(--skills-color);
 }
-.main-menu a.contact:hover{
+.main-menu a.contact:hover, .main-menu a.contact.selected{
   color: var(--contact-color);
 }
 
-.main-menu a:hover::before {
+.main-menu a:hover::before, .main-menu a.selected::before {
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -125,3 +125,39 @@ a:hover{
   font-weight: 100;
 }
 
+
+
+a.intro-link span{
+  position: relative;
+  z-index: 1;
+}
+a.intro-link:after{
+  content:" ";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  transition: height 300ms ease-out,
+              width 300ms ease-out,
+              color 300ms ease-out,
+              left 300ms ease-out;
+}
+a.intro-link:hover, a.intro-link.selected{
+  color: var(--main-background-color);
+  text-decoration: none;
+}
+a.intro-link:hover::after, a.intro-link.selected::after{
+  height: 2.4rem;
+  width: 104%;
+  left: -4px;
+}
+a.intro-link.about:after{
+  background-color: var(--about-me-color);
+}
+a.intro-link.projects:after{
+  background-color: var(--projects-color);
+}
+a.intro-link.skills:after{
+  background-color: var(--skills-color);
+}
