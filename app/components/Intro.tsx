@@ -45,7 +45,7 @@ function Intro({links}: {links: Links}){
     
     <>Aquí podrás encontrar un portafolio con todos los <motion.span {...animationProps} animate={{ color: "var(--projects-color)"}}>
           <a href={links.projects.href}>{links.projects.title}</a>
-      </motion.span> donde he trabajado, así como un detallado listado de mis <motion.span {...animationProps} animate={{ color: "var(--skills-color)"}}>
+      </motion.span> donde he trabajado, así como un detallado listado de mi&nbsp; <motion.span {...animationProps} animate={{ color: "var(--skills-color)"}}>
         <a href={links.skills.href}>{links.skills.title}</a>
       </motion.span>
     </>
@@ -57,7 +57,7 @@ function Intro({links}: {links: Links}){
 
     const showPrompt = async (dataKey: string) => {
       setIntroTexts((currentIntroTexts) => { return {...currentIntroTexts, [dataKey]: prompt }})
-      await new Promise(resolve => setTimeout(resolve, 1200))
+      await new Promise(resolve => setTimeout(resolve, 700))
     }
 
     const showTextLetterByLetter = async (dataKey: string, stateIndex: number) => {
@@ -66,7 +66,7 @@ function Intro({links}: {links: Links}){
         setIntroTexts((currentIntroTexts) => { 
           return {...currentIntroTexts, [dataKey]: currentIntroTexts[dataKey] + introTextDataString[i] }
         })
-        await new Promise(resolve => setTimeout(resolve, 60))
+        await new Promise(resolve => setTimeout(resolve, 40))
       }
     }
 
