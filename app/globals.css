@@ -25,18 +25,30 @@ body {
 
 
 /*Pages*/
+section.page{
+  padding: 4rem 8rem 4rem 4rem;
+}
 section.aboutme{
   background-color: var(--about-me-color);
 }
 section.projects{
   background-color: var(--projects-color);
 }
-
 section.skills{
   background-color: var(--skills-color);
 }
 
-
+h2{
+  transform: rotate(90deg);
+  font-size: 7rem;
+  position: absolute;
+  right: -20rem;
+  top: 20rem;
+  display: block;
+  width: 768px;
+  text-align: left;
+  color: var(--main-background-color)
+}
 
 
 a{

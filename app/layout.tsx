@@ -7,12 +7,11 @@ import { Links } from "./types"
 //COMPONENTS & PAGES
 import Header from './components/Header'
 import Background from './components/Background'
+import Start from './pages/start/page'
 import AboutMe from './pages/about/page'
 import Projects from './pages/projects/page'
-import Skills from './pages/skills/page'
+import Experience from './pages/eperience/page'
 import Contact from './pages/contact/page'
-import { Suspense } from 'react'
-
 
 export const metadata: Metadata = {
   title: 'Aleix Alsina',
@@ -23,7 +22,7 @@ const links:Links = {
   homepage: {title: "homepage", href: "/"},
   aboutme: {title: "sobre mi", href: "#sobre-mi"},
   projects: {title: "proyectos", href: "#proyectos"},
-  skills: {title: "habilidades", href: "#habilidades"},
+  skills: {title: "experiencia", href: "#experiencia"},
   contact: {title: "contacto", href: "#contacto"},
   github: {title: "", href: "https://github.com/novopowa/"},
   linkedin: {title: "", href: "https://www.linkedin.com/in/aleix-alsina-rossell-60b14863"}
@@ -36,15 +35,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <body>
         <div className="flex flex-col lg:flex-row min-h-screen lg:h-screen overflow-hidden">
-          <Suspense fallback={<>Loading....</>}>
-            <Header h1={h1} links={links} />
-            <Background>
-              <AboutMe />
-              <Projects />
-              <Skills />
-              <Contact />
-            </Background>
-          </Suspense>
+          <Header h1={h1} links={links} />
+          <Background>
+            <Start />
+            <AboutMe links={links} />
+            <Projects />
+            <Experience />
+            <Contact />
+          </Background>
         </div>
       </body>
     </html>

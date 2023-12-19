@@ -16,7 +16,7 @@ function Background({ children }:{ children: ReactNode }){
 
     
     return(
-      <main className="flex-1 bg-cover bg-left background-aboutme relative overflow-auto">
+      <main className="flex-1 bg-cover bg-left background-aboutme relative overflow-y-auto overflow-x-hidden">
           {children}
       </main>
     )
