@@ -1,14 +1,31 @@
 import { Links } from '@/app/types'
 import { calculateAge } from '@/app/utils/functions'
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Bungee_Outline } from 'next/font/google'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 const bungeeOutline = Bungee_Outline({ subsets: ['latin'], weight: '400' })
 
-function About({links}: {links: Links}){
+function About({links, onScrollInOut}: {links: Links, onScrollInOut: Function}){
+
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end end"]
+  })
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if(latest > 0.5){
+      onScrollInOut("aboutme")
+    }else{
+      onScrollInOut("")
+    }
+  })
 
   return(
-    <section id="sobre-mi" className="page aboutme min-h-screen relative flex flex-col justify-center">
+    <motion.section ref={sectionRef} id="sobremi" className="page aboutme min-h-screen relative flex flex-col justify-center">
         <h2 className={bungeeOutline.className}>Sobre mi</h2>
         <p className="my-1">Comencé a estudiar informática nada más terminar mis estudios obligatorios.</p>
         <p className="my-1">A los 15 años creé mi primera página en HTML y supe que el desarrollo web era lo mio.</p>
@@ -21,7 +38,7 @@ function About({links}: {links: Links}){
           Cuando no estoy frente a la pantalla, normalmente estoy jugando a D&D, tocando la batería 
           o <Link href="https://www.instagram.com/axel.adventure/" rel="noopener noreferrer" target="_blank">viajando por el mundo en bicicleta</Link>.
         </p>
-    </section>
+    </motion.section>
   )
 }
 

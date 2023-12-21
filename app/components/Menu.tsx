@@ -1,12 +1,12 @@
 "use client"
 
-import Link from "next/link"
 import { Links } from "../types"
+import { scrollOnClick } from "../utils/functions"
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-function Menu({h1, links}: {h1: string, links: Links}){
+function Menu({h1, links, selectedPage}: {h1: string, links: Links, selectedPage: string}){
 
   const firstRender = useRef(true);
   const toogleResponsiveMenuButton = useRef<HTMLButtonElement | null>(null);
@@ -80,12 +80,10 @@ function Menu({h1, links}: {h1: string, links: Links}){
   },[delays])
 
 
-
-
   return(
     <>
       {/*Mobile*/}
-      <nav className={`main-menu flex flex-col h-[264px] pt-2 fixed left-0 top-0 right-0 sm:hidden`}>
+      <nav className={`main-menu flex flex-col h-[264px] pt-2 fixed left-0 top-0 right-0 sm:hidden z-10`}>
         <div className="block">
           <button ref={toogleResponsiveMenuButton} className="flex items-center px-3 mr-2 py-2 border rounded float-right relative z-10" onClick={() => handleResponsiveMenuExpanded()}>
             <svg className="fill-current h-3 w-3" viewBox="0 0 20 20">
@@ -108,16 +106,16 @@ function Menu({h1, links}: {h1: string, links: Links}){
           </motion.div>
           <ul className="flex flex-col justify-between">
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[0]}} className="px-3 pl-0 mt-3 -translate-x-40">
-              <a className="inline-block py-2 px-4 w-full aboutme" href={links.aboutme.href}>{links.aboutme.title}</a>
+              <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full aboutme ${selectedPage==="aboutme" ? "selected" : ""}`} href={links.aboutme.href}>{links.aboutme.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[1]}} className="px-3 pl-0 -translate-x-40">
-              <a className="inline-block py-2 px-4 w-full projects" href={links.projects.href}>{links.projects.title}</a>
+              <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full projects ${selectedPage==="projects" ? "selected" : ""}`} href={links.projects.href}>{links.projects.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[2]}} className="px-3 pl-0 -translate-x-40">
-              <a className="inline-block py-2 px-4 w-full skills" href={links.skills.href}>{links.skills.title}</a>
+              <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full skills ${selectedPage==="skills" ? "selected" : ""}`} href={links.skills.href}>{links.skills.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[3]}} className="px-3 pl-0 -translate-x-40">
-              <a className="inline-block py-2 px-4 w-full contact" href={links.contact.href}>{links.contact.title}</a>
+              <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full contact ${selectedPage==="contact" ? "selected" : ""}`} href={links.contact.href}>{links.contact.title}</a>
             </motion.li>
           </ul>
           <div className="flex pb-3 pt-3">
@@ -138,16 +136,16 @@ function Menu({h1, links}: {h1: string, links: Links}){
       <nav className={`main-menu flex-col h-auto p-4 static hidden sm:flex`}>
         <ul className="flex flex-row justify-between">
           <li className="px-3 pl-0 mt-0">
-            <a className="inline-block py-2 aboutme" href={links.aboutme.href}>{links.aboutme.title}</a>
+            <a onClick={scrollOnClick} className={`inline-block py-2 aboutme ${selectedPage==="aboutme" ? "selected" : ""}`} href={links.aboutme.href}>{links.aboutme.title}</a>
           </li>
           <li className="px-3 pl-3 ">
-            <a className="inline-block py-2 projects" href={links.projects.href}>{links.projects.title}</a>
+            <a onClick={scrollOnClick} className={`inline-block py-2 projects ${selectedPage==="projects" ? "selected" : ""}`} href={links.projects.href}>{links.projects.title}</a>
           </li>
           <li className="px-3 pl-3">
-            <a className="inline-block py-2 skills" href={links.skills.href}>{links.skills.title}</a>
+            <a onClick={scrollOnClick} className={`inline-block py-2 skills ${selectedPage==="skills" ? "selected" : ""}`} href={links.skills.href}>{links.skills.title}</a>
           </li>
           <li className="px-3 pl-3 ">
-            <a className="inline-block py-2 contact" href={links.contact.href}>{links.contact.title}</a>
+            <a onClick={scrollOnClick} className={`inline-block py-2 contact ${selectedPage==="contact" ? "selected" : ""}`} href={links.contact.href}>{links.contact.title}</a>
           </li>
         </ul>
         <div className="flex pt-3">

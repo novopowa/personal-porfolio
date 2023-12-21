@@ -27,6 +27,7 @@ body {
 /*Pages*/
 section.page{
   padding: 4rem 8rem 4rem 4rem;
+  overflow: hidden;
 }
 section.aboutme{
   background-color: var(--about-me-color);
@@ -96,7 +97,7 @@ a:hover{
   color: var(--contact-color);
 }
 
-.main-menu a:hover::before, .main-menu a.selected::before {
+.main-menu a.selected::before {
   transform-origin: left;
   transform: scaleX(1);
 }

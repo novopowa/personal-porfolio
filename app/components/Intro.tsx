@@ -1,12 +1,12 @@
 "use client"
 
-import Link from "next/link"
+import { scrollOnClick } from "../utils/functions"
 import { useEffect, useRef, useState } from "react"
 import { jsxElementToString } from "../utils/functions"
 import { motion } from "framer-motion"
 import { IntroTexts, Links } from "../types"
 
-function Intro({links}: {links: Links}){
+function Intro({links, selectedPage}: {links: Links, selectedPage: string}){
 
   //STATES
   //The amount of introTexts must be equal to the number of introTextsData Elements
@@ -39,14 +39,14 @@ function Intro({links}: {links: Links}){
     <>soy <motion.span {...animationProps} animate={{ color: "var(--frontend-developer-color)" }}>frontend developer</motion.span></>,
 
     <>si has llegado hasta mi web posiblemente sea porque quieres saber más <motion.span {...animationProps} animate={{ color: "var(--about-me-color)" }}>
-          <a className="intro-link about" href={links.aboutme.href}><span>{links.aboutme.title}</span></a>
+          <a onClick={scrollOnClick} className={`intro-link about ${selectedPage==="aboutme" ? "selected" : ""}`} href={links.aboutme.href}><span>{links.aboutme.title}</span></a>
       </motion.span>
     </>,
     
     <>Aquí podrás encontrar un portafolio con todos los <motion.span {...animationProps} animate={{ color: "var(--projects-color)"}}>
-          <a className="intro-link projects" href={links.projects.href}><span>{links.projects.title}</span></a>
+          <a onClick={scrollOnClick} className={`intro-link projects ${selectedPage==="projects" ? "selected" : ""}`} href={links.projects.href}><span>{links.projects.title}</span></a>
       </motion.span> donde he trabajado, así como un detallado listado de mi&nbsp; <motion.span {...animationProps} animate={{ color: "var(--skills-color)"}}>
-        <a className="intro-link skills" href={links.skills.href}><span>{links.skills.title}</span></a>
+        <a onClick={scrollOnClick} className={`intro-link skills ${selectedPage==="skills" ? "selected" : ""}`} href={links.skills.href}><span>{links.skills.title}</span></a>
       </motion.span>
     </>
   ] 
@@ -104,14 +104,27 @@ function Intro({links}: {links: Links}){
       await new Promise(resolve => setTimeout(resolve, 450))
       if(!(introTextIndex.current >= showCursorsClass.length && showCursorsClass.every(value => !value))){
         setShowCursorsClass(currentCursor => { 
-          return currentCursor.map((cursor, index) => {
-            return introTextIndex.current === index ? !cursor : false
-          })
+          return currentCursor.map((cursor, index) => introTextIndex.current === index ? !cursor : false)
         })
       }
     }
     cursorAnimate()
   },[showCursorsClass])
+
+
+  //ON SELECTED PAGE CHANGE
+  useEffect(() => { 
+    if(introTextIndex.current > introTextsData.length-1){
+      setIntroTexts((currentIntroTexts) => {
+        const newIntroTexts = { ...currentIntroTexts };
+        introTextsData.forEach((text, index) => {
+          const key = `introText${index}`;
+          newIntroTexts[key] = <motion.span {...animationProps}>{prompt}{text}</motion.span>;
+        });
+        return newIntroTexts;
+      })
+    }
+  },[selectedPage])
 
 
   //RENDER

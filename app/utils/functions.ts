@@ -27,3 +27,15 @@ export function calculateAge(birthyear: number): string {
   const age: number = currentYear-birthyear 
   return age.toString()
 }
+
+
+
+export const scrollOnClick = (e: React.MouseEvent) => {
+  e.preventDefault()
+  const target = document.querySelector((e.currentTarget as HTMLAnchorElement).hash)
+  const top = (target! as HTMLAnchorElement).offsetTop - 0.6
+  window.scrollTo({
+    top: top,
+    behavior: 'smooth',
+  });
+};
