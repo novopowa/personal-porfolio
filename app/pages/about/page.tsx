@@ -1,4 +1,4 @@
-import { Links } from '@/app/types'
+import { LINKS } from '@/app/types'
 import { calculateAge } from '@/app/utils/functions'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Bungee_Outline } from 'next/font/google'
@@ -7,7 +7,7 @@ import { useRef } from 'react'
 
 const bungeeOutline = Bungee_Outline({ subsets: ['latin'], weight: '400' })
 
-function About({links, onScrollInOut}: {links: Links, onScrollInOut: Function}){
+function About({links, onScrollInOut}: {links: LINKS, onScrollInOut: Function}){
 
   const sectionRef = useRef<HTMLElement>(null)
 

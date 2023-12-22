@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import Header from "./components/Header"
-import { Links } from "./types"
+import { LINKS } from "./types"
 import Start from "./pages/start/page"
 import About from "./pages/about/page"
 import Projects from "./pages/projects/page"
@@ -11,7 +11,7 @@ import Contact from "./pages/contact/page"
 
 function Home() {
   
-  const links:Links = {
+  const links:LINKS = {
     homepage: {title: "homepage", href: ""},
     aboutme: {title: "sobre mi", href: "#sobremi"},
     projects: {title: "proyectos", href: "#proyectos"},

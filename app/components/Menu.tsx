@@ -1,12 +1,12 @@
 "use client"
 
-import { Links } from "../types"
+import { LINKS } from "../types"
 import { scrollOnClick } from "../utils/functions"
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-function Menu({h1, links, selectedPage}: {h1: string, links: Links, selectedPage: string}){
+function Menu({h1, links, selectedPage}: {h1: string, links: LINKS, selectedPage: string}){
 
   const firstRender = useRef(true);
   const toogleResponsiveMenuButton = useRef<HTMLButtonElement | null>(null);

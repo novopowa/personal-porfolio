@@ -67,10 +67,6 @@ function Projects({onScrollInOut} : {onScrollInOut: Function}){
     }
   })
 
-
-
-
-
   return(
     <motion.section ref={sectionRef} id="proyectos" className="page projects min-h-screen relative">
         <h2 className={bungeeOutline.className}>Proyectos</h2>

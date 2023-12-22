@@ -4,13 +4,13 @@ import { scrollOnClick } from "../utils/functions"
 import { useEffect, useRef, useState } from "react"
 import { jsxElementToString } from "../utils/functions"
 import { motion } from "framer-motion"
-import { IntroTexts, Links } from "../types"
+import { INTROTEXT, LINKS } from "../types"
 
-function Intro({links, selectedPage}: {links: Links, selectedPage: string}){
+function Intro({links, selectedPage}: {links: LINKS, selectedPage: string}){
 
   //STATES
   //The amount of introTexts must be equal to the number of introTextsData Elements
-  const [introTexts, setIntroTexts] = useState<IntroTexts>(
+  const [introTexts, setIntroTexts] = useState<INTROTEXT>(
     {introText0: "", introText1:"", introText2:"", introText3:"", introText4:""}
   )
   const [showCursorsClass, setShowCursorsClass] = useState<boolean[]>([
