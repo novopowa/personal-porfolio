@@ -65,6 +65,11 @@ section.skills h2{
 }
 
 
+a.project-link{
+  color: var(--projects-color);
+}
+
+
 
 /*Main menu*/
 .main-menu a{
