@@ -5,7 +5,8 @@
 
 :root {
   --main-background-color: #202731;
-
+  --secondary-background-color: #13171d;
+  --tertiary-background-color: #38414f;
   /* Intro */
   --frontend-developer-color: #f66;
   
@@ -28,15 +29,6 @@ body {
 section.page{
   padding: 4rem 8rem 4rem 4rem;
   overflow: hidden;
-}
-section.aboutme{
-  background-color: var(--about-me-color);
-}
-section.projects{
-  background-color: var(--projects-color);
-}
-section.skills{
-  background-color: var(--skills-color);
 }
 
 h2{
@@ -62,12 +54,22 @@ a:hover{
   text-decoration: none;
 }
 
+section.aboutme h2{
+  background-color: var(--about-me-color);
+}
+section.projects h2{
+  background-color: var(--projects-color);
+}
+section.skills h2{
+  background-color: var(--skills-color);
+}
+
+
 
 /*Main menu*/
 .main-menu a{
   opacity: 0.7;
   text-decoration: none;
-  transition: opacity .3s ease-in-out;
   white-space: nowrap;
 }
 .main-menu a::before {
@@ -161,4 +163,45 @@ a.intro-link.projects:after{
 }
 a.intro-link.skills:after{
   background-color: var(--skills-color);
+}
+
+
+
+/*Project*/
+
+.project{
+  background-color: var(--secondary-background-color);
+}
+
+.project h3{
+  color: var(--projects-color)
+}
+
+.project .button{
+  background-color: var(--tertiary-background-color);
+  transition: background-color 300ms ease-out,
+              color 200ms ease-out;
+}
+
+.project .button:hover{
+  background-color: var(--projects-color);
+  color: var(--secondary-background-color)
+}
+
+.project a.image{
+  transition: filter 200ms ease-out
+}
+
+.project a.image img:hover, .project a.image span:hover + img{
+  filter: blur(5px);
+}
+
+.project a.image:hover span{
+  display: block;
+  background-color: rgba(6, 6, 6, 0.7);
+  color: var(--projects-color)
+}
+
+.project svg{
+  display: inline-block;
 }
