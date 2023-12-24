@@ -29,8 +29,6 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/no-unsafe-argument": "off",
-        "@typescript-eslint/no-floating-promises": "off"
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }

@@ -1,11 +1,11 @@
 export function jsxElementToString (jsx: React.JSX.Element): string {
-  const object = jsx.props.children
+  const object: string | React.JSX.Element = jsx.props.children
   let result = ''
   if (typeof object === 'string') {
     result += object
   } else {
     if (Array.isArray(object)) {
-      result += object.map((item: any) => {
+      result += object.map((item: string | React.JSX.Element) => {
         if (typeof item === 'string') {
           return item
         } else {
