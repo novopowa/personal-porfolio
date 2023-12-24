@@ -39,27 +39,27 @@ function Menu ({ h1, links, selectedPage }: { h1: string, links: LINKS, selected
       menuControls.start({ height: 264 }).then(() => {
         menuH1Controls.start({ transform: 'translateY(0)' }).then(() => {
           menuLiControls.start({ transform: 'translateX(0)', borderTop: '1px solid #777' }).then(() => {
-            menuExternalLinksLeftControls.start({ transform: 'translateX(0)' })
+            menuExternalLinksLeftControls.start({ transform: 'translateX(0)' }).then(() => {}, () => {})
             menuExternalLinksRightControls.start({ transform: 'translateX(0)' }).then(() => {
               toogleResponsiveMenuButton.current!.disabled = false
-            })
-          })
-        })
-      })
+            }, () => {})
+          }, () => {})
+        }, () => {})
+      }, () => {})
     }
 
     const closeResponsiveMenu = (): void => {
-      menuExternalLinksLeftControls.start({ transform: 'translateX(-200px)' })
+      menuExternalLinksLeftControls.start({ transform: 'translateX(-200px)' }).then(() => {}, () => {})
       menuExternalLinksRightControls.start({ transform: 'translateX(200px)' }).then(() => {
         menuLiControls.start({ transform: 'translateX(-150px)', borderTop: '1px solid transparent' }).then(() => {
           menuH1Controls.start({ transform: 'translateY(-30px)' }).then(() => {
             menuControls.start({ height: 0 }).then(() => {
               setResponsiveMenuExpanded(false)
               toogleResponsiveMenuButton.current!.disabled = false
-            })
-          })
-        })
-      })
+            }, () => {})
+          }, () => {})
+        }, () => {})
+      }, () => {})
     }
 
     const toogleResponsiveMenu = (): void => {
