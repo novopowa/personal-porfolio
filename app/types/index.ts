@@ -22,3 +22,11 @@ export interface EXPERIENCE {
     desc: React.JSX.Element,
     technologies: string[]
 }
+
+//Contact 
+export interface CONTACT_SOURCE {
+    icon: React.JSX.Element,
+    name: string,
+    link?: string,
+    canBeCopied: boolean
+}

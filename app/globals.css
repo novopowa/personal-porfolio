@@ -245,3 +245,20 @@ div.experience{
   color: var(--experiences-color);
   background-color: var(--tertiary-background-color);
 }
+
+
+/*Contact*/
+
+.contact svg{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.copied{
+  color: var(--projects-color);
+}
+
+.not-copied{
+  color: inherit;
+  transition: color 700ms ease-out;
+}
