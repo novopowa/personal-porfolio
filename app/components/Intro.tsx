@@ -45,8 +45,8 @@ function Intro({links, selectedPage}: {links: LINKS, selectedPage: string}){
     
     <>Aquí podrás encontrar un portafolio con todos los <motion.span {...animationProps} animate={{ color: "var(--projects-color)"}}>
           <a onClick={scrollOnClick} className={`intro-link projects ${selectedPage==="projects" ? "selected" : ""}`} href={links.projects.href}><span>{links.projects.title}</span></a>
-      </motion.span> donde he trabajado, así como un detallado listado de mi&nbsp; <motion.span {...animationProps} animate={{ color: "var(--experience-color)"}}>
-        <a onClick={scrollOnClick} className={`intro-link experience ${selectedPage==="experience" ? "selected" : ""}`} href={links.experience.href}><span>{links.experience.title}</span></a>
+      </motion.span> donde he trabajado, así como un detallado listado de mi&nbsp; <motion.span {...animationProps} animate={{ color: "var(--experiences-color)"}}>
+        <a onClick={scrollOnClick} className={`intro-link experiences ${selectedPage==="experiences" ? "selected" : ""}`} href={links.experience.href}><span>{links.experience.title}</span></a>
       </motion.span>
     </>
   ] 

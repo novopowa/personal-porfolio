@@ -13,7 +13,7 @@ function Project(props: PROJECT){
     )
   }
   return(
-      <div className="project w-full max-w-sm rounded-lg overflow-hidden bor">
+      <div className="project w-full max-w-sm rounded-lg overflow-hidden relative">
         <Link  href={props.url} rel="noopener noreferrer" target="_blank" className="image">
           <span className="absolute top-1/2 w-full text-center z-10 py-3 hidden">{clickText()}</span>
           <Image src={`/images/${props.image}`} alt={props.name} width={400} height={450} className="w-[400px] h-[450px]"/>

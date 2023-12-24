@@ -6,7 +6,7 @@ import { LINKS } from "./types"
 import Start from "./pages/start/page"
 import About from "./pages/about/page"
 import Projects from "./pages/projects/page"
-import Experience from "./pages/experience/page"
+import Experiences from "./pages/experiences/page"
 import Contact from "./pages/contact/page"
 
 function Home() {
@@ -39,7 +39,7 @@ function Home() {
         <Start />
         <About links={links} onScrollInOut={onScrollInOut} />
         <Projects onScrollInOut={onScrollInOut} />
-        <Experience onScrollInOut={onScrollInOut} />
+        <Experiences onScrollInOut={onScrollInOut} />
         <Contact onScrollInOut={onScrollInOut} />
       </main>
     </>

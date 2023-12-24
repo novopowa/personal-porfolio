@@ -5,6 +5,7 @@
 
 :root {
   --main-background-color: #202731;
+  --main-background-color-rgb: 32,39,49;
   --secondary-background-color: #13171d;
   --tertiary-background-color: #38414f;
   /* Intro */
@@ -13,7 +14,7 @@
   /* Main menu */
   --about-me-color: #ffb366;
   --projects-color: #6f6;
-  --experience-color: #6ff;
+  --experiences-color: #6ff;
   --contact-color: #fff;
   
 }
@@ -27,7 +28,7 @@ body {
 
 /*Pages*/
 section.page{
-  padding: 4rem 8rem 4rem 4rem;
+  padding: 4rem 5rem 4rem 1rem;
   overflow: hidden;
 }
 
@@ -60,8 +61,8 @@ section.aboutme h2{
 section.projects h2{
   background-color: var(--projects-color);
 }
-section.experience h2{
-  background-color: var(--experience-color);
+section.experiences h2{
+  background-color: var(--experiences-color);
 }
 
 
@@ -97,8 +98,8 @@ a.project-link{
 .main-menu a.projects:hover, .main-menu a.projects.selected{
   color: var(--projects-color);
 }
-.main-menu a.experience:hover, .main-menu a.experience.selected{
-  color: var(--experience-color);
+.main-menu a.experiences:hover, .main-menu a.experiences.selected{
+  color: var(--experiences-color);
 }
 .main-menu a.contact:hover, .main-menu a.contact.selected{
   color: var(--contact-color);
@@ -114,8 +115,8 @@ a.project-link{
 .main-menu a.projects::before{
   background-color: var(--projects-color);
 }
-.main-menu a.experience::before{
-  background-color: var(--experience-color);
+.main-menu a.experiences::before{
+  background-color: var(--experiences-color);
 }
 .main-menu a.contact::before{
   background-color: var(--contact-color);
@@ -166,9 +167,23 @@ a.intro-link.about:after{
 a.intro-link.projects:after{
   background-color: var(--projects-color);
 }
-a.intro-link.experience:after{
-  background-color: var(--experience-color);
+a.intro-link.experiences:after{
+  background-color: var(--experiences-color);
 }
+
+
+
+/*About me*/
+
+.aboutme div{
+  background-color: rgba(var(--main-background-color-rgb), 0.90);
+}
+
+
+
+
+
+
 
 
 
@@ -209,4 +224,24 @@ a.intro-link.experience:after{
 
 .project svg{
   display: inline-block;
+}
+
+
+/* Experiencies */
+
+div.experience{
+  background-color: rgba(var(--main-background-color-rgb), 0.90);
+} 
+
+.experiences h3{
+  color: var(--experiences-color);
+}
+
+.experiences .years, .experiences h4{
+  opacity: 0.7;
+} 
+
+.experiences .tag{
+  color: var(--experiences-color);
+  background-color: var(--tertiary-background-color);
 }

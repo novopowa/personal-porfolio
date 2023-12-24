@@ -27,7 +27,7 @@ function About({links, onScrollInOut}: {links: LINKS, onScrollInOut: Function}){
   return(
     <motion.section ref={sectionRef} id="sobremi" className="page aboutme min-h-screen relative flex flex-col justify-center">
         <h2 className={bungeeOutline.className}>Sobre mi</h2>
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto relative">
           <p className="my-4">Comencé a estudiar informática nada más terminar mis estudios obligatorios.</p>
           <p className="my-4">A los 15 años creé mi primera página en HTML y supe que el desarrollo web era lo mio.</p>
           <p className="my-4">
