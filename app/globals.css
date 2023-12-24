@@ -13,7 +13,7 @@
   /* Main menu */
   --about-me-color: #ffb366;
   --projects-color: #6f6;
-  --skills-color: #6ff;
+  --experience-color: #6ff;
   --contact-color: #fff;
   
 }
@@ -60,8 +60,8 @@ section.aboutme h2{
 section.projects h2{
   background-color: var(--projects-color);
 }
-section.skills h2{
-  background-color: var(--skills-color);
+section.experience h2{
+  background-color: var(--experience-color);
 }
 
 
@@ -97,8 +97,8 @@ a.project-link{
 .main-menu a.projects:hover, .main-menu a.projects.selected{
   color: var(--projects-color);
 }
-.main-menu a.skills:hover, .main-menu a.skills.selected{
-  color: var(--skills-color);
+.main-menu a.experience:hover, .main-menu a.experience.selected{
+  color: var(--experience-color);
 }
 .main-menu a.contact:hover, .main-menu a.contact.selected{
   color: var(--contact-color);
@@ -114,8 +114,8 @@ a.project-link{
 .main-menu a.projects::before{
   background-color: var(--projects-color);
 }
-.main-menu a.skills::before{
-  background-color: var(--skills-color);
+.main-menu a.experience::before{
+  background-color: var(--experience-color);
 }
 .main-menu a.contact::before{
   background-color: var(--contact-color);
@@ -166,8 +166,8 @@ a.intro-link.about:after{
 a.intro-link.projects:after{
   background-color: var(--projects-color);
 }
-a.intro-link.skills:after{
-  background-color: var(--skills-color);
+a.intro-link.experience:after{
+  background-color: var(--experience-color);
 }
 
 

@@ -15,7 +15,7 @@ function Home() {
     homepage: {title: "homepage", href: ""},
     aboutme: {title: "sobre mi", href: "#sobremi"},
     projects: {title: "proyectos", href: "#proyectos"},
-    skills: {title: "experiencia", href: "#experiencia"},
+    experience: {title: "experiencia", href: "#experiencia"},
     contact: {title: "contacto", href: "#contacto"},
     github: {title: "", href: "https://github.com/novopowa/"},
     linkedin: {title: "", href: "https://www.linkedin.com/in/aleix-alsina-rossell-60b14863"}

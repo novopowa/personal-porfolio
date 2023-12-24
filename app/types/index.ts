@@ -11,3 +11,11 @@ export interface PROJECT {
     desc: string,
     url: string
 }
+
+//Project
+export interface PROJECT {
+    image: string,
+    name: string,
+    desc: string,
+    url: string
+}

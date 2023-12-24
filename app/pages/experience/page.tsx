@@ -15,11 +15,11 @@ function Experience({onScrollInOut} : {onScrollInOut: Function}){
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if(latest > 0.5){
-      onScrollInOut("skills")
+      onScrollInOut("experience")
     }
   })
   return(
-    <motion.section ref={sectionRef} id="experiencia" className="page skills min-h-screen relative">
+    <motion.section ref={sectionRef} id="experiencia" className="page experience min-h-screen relative">
       <h2 className={bungeeOutline.className}>Experiencia</h2>
     </motion.section>
   )

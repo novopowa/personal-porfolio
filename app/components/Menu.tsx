@@ -112,7 +112,7 @@ function Menu({h1, links, selectedPage}: {h1: string, links: LINKS, selectedPage
               <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full projects ${selectedPage==="projects" ? "selected" : ""}`} href={links.projects.href}>{links.projects.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[2]}} className="px-3 pl-0 -translate-x-40">
-              <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full skills ${selectedPage==="skills" ? "selected" : ""}`} href={links.skills.href}>{links.skills.title}</a>
+              <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full experience ${selectedPage==="experience" ? "selected" : ""}`} href={links.experience.href}>{links.experience.title}</a>
             </motion.li>
             <motion.li {...animationProps} transition={{...animationProps.transition, delay: animationProps.transition.delay+delays[3]}} className="px-3 pl-0 -translate-x-40">
               <a onClick={scrollOnClick} className={`inline-block py-2 px-4 w-full contact ${selectedPage==="contact" ? "selected" : ""}`} href={links.contact.href}>{links.contact.title}</a>
@@ -142,7 +142,7 @@ function Menu({h1, links, selectedPage}: {h1: string, links: LINKS, selectedPage
             <a onClick={scrollOnClick} className={`inline-block py-2 projects ${selectedPage==="projects" ? "selected" : ""}`} href={links.projects.href}>{links.projects.title}</a>
           </li>
           <li className="px-3 pl-3">
-            <a onClick={scrollOnClick} className={`inline-block py-2 skills ${selectedPage==="skills" ? "selected" : ""}`} href={links.skills.href}>{links.skills.title}</a>
+            <a onClick={scrollOnClick} className={`inline-block py-2 experience ${selectedPage==="experience" ? "selected" : ""}`} href={links.experience.href}>{links.experience.title}</a>
           </li>
           <li className="px-3 pl-3 ">
             <a onClick={scrollOnClick} className={`inline-block py-2 contact ${selectedPage==="contact" ? "selected" : ""}`} href={links.contact.href}>{links.contact.title}</a>
