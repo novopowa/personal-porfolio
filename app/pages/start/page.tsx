@@ -1,6 +1,5 @@
-function Start(){
-  
-  return(
+function Start (): React.JSX.Element {
+  return (
     <section id="start" className="page min-h-screen relative">
         Start
     </section>
@@ -8,4 +7,3 @@ function Start(){
 }
 
 export default Start
-

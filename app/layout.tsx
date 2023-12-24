@@ -3,10 +3,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Aleix Alsina',
-  description: 'The portfolio of Aleix Alsina, Frontend Developer.',
+  description: 'The portfolio of Aleix Alsina, Frontend Developer.'
 }
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout ({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
     <html lang="es">
       <body>
