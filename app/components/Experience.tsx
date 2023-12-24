@@ -12,7 +12,7 @@ function Experience(props: EXPERIENCE){
           {props.desc}
           <div className="mt-4">
             {props.technologies.map((technology, i) => { 
-              return <span className="tag inline-block p-1 rounded-md mr-2 mb-2 text-sm" key={i}>{technology}</span>
+              return <span className="tag inline-block p-1 px-2 rounded-md mr-2 mb-2 text-sm" key={i}>{technology}</span>
             })}
           </div>
         </div>

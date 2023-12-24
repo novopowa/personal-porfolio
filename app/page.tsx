@@ -18,7 +18,8 @@ function Home() {
     experience: {title: "experiencia", href: "#experiencia"},
     contact: {title: "contacto", href: "#contacto"},
     github: {title: "Github.com/novopowa/", href: "https://github.com/novopowa/"},
-    linkedin: {title: "linkedin.com/in/aalsina", href: "https://www.linkedin.com/in/aleix-alsina-rossell-60b14863"}
+    linkedin: {title: "linkedin.com/in/aalsina", href: "https://www.linkedin.com/in/aleix-alsina-rossell-60b14863"},
+    instagram: {title: "", href: "https://www.instagram.com/axel.adventure/"}
   }
 
   const h1: string = "AleixAlsina.dev"

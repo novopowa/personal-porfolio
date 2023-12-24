@@ -63,7 +63,7 @@ function Experiences({onScrollInOut} : {onScrollInOut: Function}){
   return(
     <motion.section ref={sectionRef} id="experiencia" className="page experiences min-h-screen relative">
       <h2 className={bungeeOutline.className}>Experiencia</h2>
-      <div>
+      <div className="max-w-3xl mx-auto">
         {experiences.reverse().map((experience, i) => {
           return <Experience {...experience} key={i}/>
         })}

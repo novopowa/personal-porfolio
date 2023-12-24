@@ -4,6 +4,8 @@ import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Bungee_Outline } from 'next/font/google'
 import Link from 'next/link'
 import { useRef } from 'react'
+import { MdArrowOutward } from "react-icons/md";
+
 
 const bungeeOutline = Bungee_Outline({ subsets: ['latin'], weight: '400' })
 
@@ -17,9 +19,9 @@ function About({links, onScrollInOut}: {links: LINKS, onScrollInOut: Function}){
   })
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if(latest > 0.5){
+    if (latest > 0.5) {
       onScrollInOut("aboutme")
-    }else{
+    } else {
       onScrollInOut("")
     }
   })
@@ -29,15 +31,15 @@ function About({links, onScrollInOut}: {links: LINKS, onScrollInOut: Function}){
         <h2 className={bungeeOutline.className}>Sobre mi</h2>
         <div className="max-w-2xl mx-auto relative">
           <p className="my-4">Comencé a estudiar informática nada más terminar mis estudios obligatorios.</p>
-          <p className="my-4">A los 15 años creé mi primera página en HTML y supe que el desarrollo web era lo mio.</p>
+          <p className="my-4"><strong>A los 15 años creé mi primera página en HTML</strong> y supe que el desarrollo web era mi vocación.</p>
           <p className="my-4">
-            En la actualidad, con <strong>{calculateAge(1989)} años</strong>, he acumulado experiencia trabajando para diversas 
-            empresas y he participado en la creación de una amplia variedad de <a className="project-link" onClick={scrollOnClick} href={links.projects.href}>proyectos</a>.
+            En la actualidad, con {calculateAge(1989)} años, he acumulado experiencia trabajando para diversas 
+            empresas y <strong>he participado en la creación de una amplia variedad de <a className="project-link" onClick={scrollOnClick} href={links.projects.href}>proyectos</a></strong>.
           </p> 
-          <p className="my-4">En los últimos años he enfocado mi especialización en el desarrollo Frontend, ya que siempre ha sido la parte del desarrollo que más he disfrutado.</p>
+          <p className="my-4">En los últimos años <strong>he enfocado mi especialización en el desarrollo Frontend</strong>, ya que siempre ha sido la parte del desarrollo que más he disfrutado.</p>
           <p className="my-4">
             Cuando no estoy frente a la pantalla, normalmente estoy jugando a D&D, tocando la batería 
-            o <Link href="https://www.instagram.com/axel.adventure/" rel="noopener noreferrer" target="_blank">viajando por el mundo en bicicleta</Link>.
+            o <Link href={links.instagram.href} rel="noopener noreferrer" target="_blank">viajando por el mundo en bicicleta<MdArrowOutward /></Link>.
           </p>
         </div>
     </motion.section>

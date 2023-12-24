@@ -47,7 +47,7 @@ function Contact({links, onScrollInOut}: {links: LINKS, onScrollInOut: Function}
         <motion.section ref={sectionRef} id="contacto" className="page contact min-h-screen relative flex">
             <h2 className={`${bungeeOutline.className} text-white`}>Contacto</h2>
             <div className="relative flex flex-col justify-center mx-auto">
-              <p>Ponte en contacto conmigo a través de los siguientes medios:</p>
+              <p>Puedes ponerte en contacto conmigo a través de los siguientes enlaces:</p>
               {contactSources.map((source, i) => {
                 return <ContactSource {...source} key={i}/>
               })}
