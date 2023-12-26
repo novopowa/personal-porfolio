@@ -1,10 +1,8 @@
 import Experience from '@/app/components/Experience'
+import H2 from '@/app/components/ui/H2'
 import { type EXPERIENCE } from '@/app/types'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { Bungee_Outline } from 'next/font/google'
 import { useRef } from 'react'
-
-const bungeeOutline = Bungee_Outline({ subsets: ['latin'], weight: '400' })
 
 function Experiences ({ onScrollInOut }: { onScrollInOut: (page: string) => void }): React.JSX.Element {
   const experiences: EXPERIENCE[] = [
@@ -60,7 +58,7 @@ function Experiences ({ onScrollInOut }: { onScrollInOut: (page: string) => void
   })
   return (
     <motion.section ref={sectionRef} id="experiencia" className="page experiences min-h-screen relative">
-      <h2 className={bungeeOutline.className}>Experiencia</h2>
+      <H2>Experiencia</H2>
       <div className="max-w-3xl mx-auto">
         {experiences.reverse().map((experience, i) => {
           return <Experience {...experience} key={i}/>

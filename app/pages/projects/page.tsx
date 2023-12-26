@@ -1,12 +1,10 @@
 'use client'
 
 import Project from '@/app/components/Project'
+import H2 from '@/app/components/ui/H2'
 import { type PROJECT } from '@/app/types'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { Bungee_Outline } from 'next/font/google'
 import { useRef } from 'react'
-
-const bungeeOutline = Bungee_Outline({ subsets: ['latin'], weight: '400' })
 
 function Projects ({ onScrollInOut }: { onScrollInOut: (page: string) => void }): React.JSX.Element {
   const projects: PROJECT[] = [
@@ -68,7 +66,7 @@ function Projects ({ onScrollInOut }: { onScrollInOut: (page: string) => void })
 
   return (
     <motion.section ref={sectionRef} id="proyectos" className="page projects min-h-screen relative">
-        <h2 className={bungeeOutline.className}>Proyectos</h2>
+        <H2>Proyectos</H2>
         <div className="flex flex-wrap gap-6 justify-center max-w-6xl mx-auto">
           {projects.map((project, i) => {
             return <Project {...project} key={i}/>

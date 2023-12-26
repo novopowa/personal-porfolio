@@ -1,12 +1,10 @@
+import H2 from '@/app/components/ui/H2'
 import { type LINKS } from '@/app/types'
 import { calculateAge, scrollOnClick } from '@/app/utils/functions'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
-import { Bungee_Outline } from 'next/font/google'
 import Link from 'next/link'
 import { useRef } from 'react'
 import { MdArrowOutward } from 'react-icons/md'
-
-const bungeeOutline = Bungee_Outline({ subsets: ['latin'], weight: '400' })
 
 function About ({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page: string) => void }): React.JSX.Element {
   const sectionRef = useRef<HTMLElement>(null)
@@ -26,7 +24,7 @@ function About ({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page: 
 
   return (
     <motion.section ref={sectionRef} id="sobremi" className="page aboutme min-h-screen relative flex flex-col justify-center">
-        <h2 className={bungeeOutline.className}>Sobre mi</h2>
+        <H2>Sobre mi</H2>
         <div className="max-w-2xl mx-auto relative">
           <p className="my-4">Comencé a estudiar informática nada más terminar mis estudios obligatorios.</p>
           <p className="my-4"><strong>A los 15 años creé mi primera página en HTML</strong> y supe que el desarrollo web era mi vocación.</p>

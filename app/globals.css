@@ -28,21 +28,10 @@ body {
 
 /*Pages*/
 section.page{
-  padding: 4rem 5rem 4rem 1rem;
+  padding: 4rem 1rem;
   overflow: hidden;
 }
 
-h2{
-  transform: rotate(90deg);
-  font-size: 7rem;
-  position: absolute;
-  right: -20rem;
-  top: 20rem;
-  display: block;
-  width: 768px;
-  text-align: left;
-  color: var(--main-background-color)
-}
 
 
 a{
@@ -56,13 +45,13 @@ a:hover{
 }
 
 section.aboutme h2{
-  background-color: var(--about-me-color);
+  color: var(--about-me-color);
 }
 section.projects h2{
-  background-color: var(--projects-color);
+  color: var(--projects-color);
 }
 section.experiences h2{
-  background-color: var(--experiences-color);
+  color: var(--experiences-color);
 }
 
 
