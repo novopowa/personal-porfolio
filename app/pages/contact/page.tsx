@@ -41,10 +41,9 @@ function Contact ({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page
   })
 
   return (
-        <motion.section ref={sectionRef} id="contacto" className="page contact min-h-screen relative flex">
+        <motion.section ref={sectionRef} id="contacto" className="page contact min-h-screen relative flex flex-col ">
             <H2>Contacto</H2>
             <div className="relative flex flex-col justify-center mx-auto">
-              <p className='mb-5'>Puedes ponerte en contacto conmigo a través de los siguientes enlaces:</p>
               {contactSources.map((source, i) => {
                 return <ContactSource {...source} key={i}/>
               })}

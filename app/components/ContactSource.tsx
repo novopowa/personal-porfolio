@@ -10,22 +10,23 @@ function ContactSource (props: CONTACT_SOURCE): React.JSX.Element {
   const [copyText, setCopyText] = useState<string>(copyTexts.copy)
 
   const copy = (text: string): void => {
-    navigator.clipboard.writeText(text)
-    setCopyText(copyTexts.copied)
-    setTimeout(() => {
-      setCopyText(copyTexts.copy)
-    }, 3000)
+    navigator.clipboard.writeText(text).then(() => {
+      setCopyText(copyTexts.copied)
+      setTimeout(() => {
+        setCopyText(copyTexts.copy)
+      }, 3000)
+    }, () => {})
   }
 
   const content = (): React.JSX.Element => {
-    return props.link !== null
+    return props.link !== undefined
       ? <a href={props.link} rel="noopener noreferrer" target="_blank" className={`${major.className} text-lg my-3 p-3 rounded-xl border-2 min-w-[25rem]`}>
-        {props.icon}{props.name}<MdArrowOutward />
-      </a>
-      : <div className={`${major.className} text-lg my-3 p-3 rounded-xl border-2 min-w-[25rem]`}>
+          {props.icon}{props.name}<MdArrowOutward />
+        </a>
+      : <button className={`${major.className} text-lg text-left my-3 p-3 rounded-xl border-2 min-w-[25rem]`} onClick={() => { copy(props.name) }}>
         {props.icon}{props.name}
-        <button className={`float-right text-sm p-1 ${copyText === copyTexts.copy ? 'not-copied' : 'copied'}`} onClick={() => { copy(props.name) }}>{copyText}</button>
-      </div>
+          <span className={`float-right text-sm p-1 ${copyText === copyTexts.copy ? 'not-copied' : 'copied'}`}>{copyText}</span>
+        </button>
   }
 
   return content()

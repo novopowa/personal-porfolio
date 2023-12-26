@@ -241,9 +241,11 @@ a.intro-link.experiences:after{
 
 .copied{
   color: var(--projects-color);
+  text-shadow: 0 0 25px;
 }
 
 .not-copied{
   color: inherit;
+  opacity: 0.8;
   transition: color 700ms ease-out;
 }
