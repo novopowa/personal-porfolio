@@ -34,7 +34,11 @@ function About ({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page: 
   })
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    onScrollInOut('aboutme')
+    if (latest > 0.5) {
+      onScrollInOut('aboutme')
+    } else {
+      onScrollInOut('')
+    }
     if (latest > 0.7 && !noMoreArrow) {
       setNoMoreArrow(true)
     }

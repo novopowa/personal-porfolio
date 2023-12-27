@@ -35,7 +35,7 @@ function Contact ({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page
   })
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    if (latest > 0.5) {
+    if (latest > 0.1) {
       onScrollInOut('contact')
     }
   })
