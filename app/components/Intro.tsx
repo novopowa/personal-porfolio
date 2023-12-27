@@ -124,7 +124,6 @@ function Intro ({ links, selectedPage }: { links: LINKS, selectedPage: string })
   // ON SELECTED PAGE CHANGE
 
   const showIntroAllAtOnce = (): void => {
-    console.log('entra')
     setIntroTexts((currentIntroTexts) => {
       const newIntroTexts = { ...currentIntroTexts }
       introTextsData.forEach((text, index) => {
