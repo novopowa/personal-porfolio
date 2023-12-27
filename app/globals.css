@@ -55,9 +55,7 @@ section.experiences h2{
 }
 
 
-a.project-link{
-  color: var(--projects-color);
-}
+
 
 
 
@@ -170,12 +168,23 @@ h2{
 
 /*About me*/
 
-.aboutme svg{
+.aboutme p a svg{
   display: inline;
 }
 
+.aboutme h2 a{
+  border: 1px solid var(--about-me-color);
+  color: var(--about-me-color);
+}
 
+.aboutme h2 a.transparent{
+  border-color: var(--main-background-color);
+  color: var(--main-background-color);
+}
 
+.aboutme a.project-link{
+  color: var(--projects-color);
+}
 
 
 

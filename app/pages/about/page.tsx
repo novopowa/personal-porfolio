@@ -3,10 +3,29 @@ import { type LINKS } from '@/app/types'
 import { calculateAge, scrollOnClick } from '@/app/utils/functions'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import Link from 'next/link'
-import { useRef } from 'react'
+import type React from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { MdArrowOutward } from 'react-icons/md'
+import { IoIosArrowRoundDown } from 'react-icons/io'
 
 function About ({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page: string) => void }): React.JSX.Element {
+  const [showArrow, setShowArrow] = useState(true)
+  const [noMoreArrow, setNoMoreArrow] = useState(false)
+
+  const Arrow = (): React.JSX.Element => {
+    return (
+      <a href={links.aboutme.href} onClick={scrollOnClick} className={`absolute ml-3 opacity-60 rounded-full ${showArrow && !noMoreArrow ? '' : 'transparent'}`}>
+        <IoIosArrowRoundDown />
+      </a>
+    )
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowArrow(currentArrow => !currentArrow)
+    }, 800)
+  }, [showArrow])
+
   const sectionRef = useRef<HTMLElement>(null)
 
   const { scrollYProgress } = useScroll({
@@ -15,16 +34,15 @@ function About ({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page: 
   })
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    if (latest > 0.5) {
-      onScrollInOut('aboutme')
-    } else {
-      onScrollInOut('')
+    onScrollInOut('aboutme')
+    if (latest > 0.7 && !noMoreArrow) {
+      setNoMoreArrow(true)
     }
   })
 
   return (
-    <motion.section ref={sectionRef} id="sobremi" className="page aboutme min-h-screen relative flex flex-col justify-center">
-        <H2>Sobre mi</H2>
+    <motion.section ref={sectionRef} id="sobremi" className="page aboutme min-h-screen relative flex flex-col">
+        <H2>Sobre mi <Arrow /></H2>
         <div className="max-w-2xl mx-auto relative">
           <p className="my-4">Comencé a estudiar informática nada más terminar mis estudios obligatorios.</p>
           <p className="my-4"><strong>A los 15 años creé mi primera página en HTML</strong> y supe que el desarrollo web era mi vocación.</p>
