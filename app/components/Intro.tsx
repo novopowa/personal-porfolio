@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { motion } from 'framer-motion'
 import { type INTROTEXT, type LINKS } from '../types'
+import localStorageService from '../services/localStorageService'
 
 function Intro ({ links, selectedPage }: { links: LINKS, selectedPage: string }): React.JSX.Element {
   // STATES
@@ -16,13 +17,19 @@ function Intro ({ links, selectedPage }: { links: LINKS, selectedPage: string })
     false, false, false, false, false
   ])
 
+  // SERVICES
+  const animateIntro = (): boolean => {
+    const introStatus = localStorageService.getItem('introStatus')
+    return introStatus === null && introStatus !== 'shown'
+  }
+
   // REF
   const introTextIndex = useRef(0)
 
   // ANIMATION GENERAL CONFIG
   const animationProps = {
     animate: { color: '#666' },
-    transition: { ease: 'easeOut', duration: 10 }
+    transition: { ease: 'easeOut', duration: animateIntro() ? 10 : 0 }
   }
 
   // DATA
@@ -81,43 +88,55 @@ function Intro ({ links, selectedPage }: { links: LINKS, selectedPage: string })
       const dataKey = `introText${stateIndex}`
       await showPrompt(dataKey)
       await showTextLetterByLetter(dataKey, stateIndex)
-      changeStringIntroToJSX(dataKey, stateIndex)
+      changeStringIntroToJSX(dataKey, stateIndex).then(() => {}, () => {})
       introTextIndex.current++
     }
 
     const showIntros = async (): Promise<void> => {
-      for (let i = 0; i < Object.keys(introTexts).length; i++) {
-        await showIntro()
+      if (animateIntro()) {
+        for (let i = 0; i < Object.keys(introTexts).length; i++) {
+          await showIntro()
+        }
+        localStorageService.setItem<string>('introStatus', 'shown')
+      } else {
+        showIntroAllAtOnce()
       }
     }
 
-    showIntros()
+    showIntros().then(() => {}, () => {})
   }, [])
 
   // CURSOR USE EFFECT
   useEffect(() => {
     const cursorAnimate = async (): Promise<void> => {
       await new Promise(resolve => setTimeout(resolve, 450))
-      if (!(introTextIndex.current >= showCursorsClass.length && showCursorsClass.every(value => !value))) {
-        setShowCursorsClass(currentCursor => {
-          return currentCursor.map((cursor, index) => introTextIndex.current === index ? !cursor : false)
-        })
+      if (animateIntro()) {
+        if (!(introTextIndex.current >= showCursorsClass.length && showCursorsClass.every(value => !value))) {
+          setShowCursorsClass(currentCursor => {
+            return currentCursor.map((cursor, index) => introTextIndex.current === index ? !cursor : false)
+          })
+        }
       }
     }
-    cursorAnimate()
+    cursorAnimate().then(() => {}, () => {})
   }, [showCursorsClass])
 
   // ON SELECTED PAGE CHANGE
+
+  const showIntroAllAtOnce = (): void => {
+    setIntroTexts((currentIntroTexts) => {
+      const newIntroTexts = { ...currentIntroTexts }
+      introTextsData.forEach((text, index) => {
+        const key = `introText${index}`
+        newIntroTexts[key] = <motion.span {...animationProps}>{prompt}{text}</motion.span>
+      })
+      return newIntroTexts
+    })
+  }
+
   useEffect(() => {
     if (introTextIndex.current > introTextsData.length - 1) {
-      setIntroTexts((currentIntroTexts) => {
-        const newIntroTexts = { ...currentIntroTexts }
-        introTextsData.forEach((text, index) => {
-          const key = `introText${index}`
-          newIntroTexts[key] = <motion.span {...animationProps}>{prompt}{text}</motion.span>
-        })
-        return newIntroTexts
-      })
+      showIntroAllAtOnce()
     }
   }, [selectedPage])
 
