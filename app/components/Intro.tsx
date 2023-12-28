@@ -131,10 +131,7 @@ function Intro({ links, selectedPage }: { links: LINKS; selectedPage: string }):
 			const dataKey = `introText${stateIndex}`
 			await showPrompt(dataKey)
 			await showTextLetterByLetter(dataKey, stateIndex)
-			changeStringIntroToJSX(dataKey, stateIndex).then(
-				() => {},
-				() => {}
-			)
+			changeStringIntroToJSX(dataKey, stateIndex).then(() => {}, () => {})
 			introTextIndex.current++
 		}
 
@@ -143,7 +140,7 @@ function Intro({ links, selectedPage }: { links: LINKS; selectedPage: string }):
 				for (let i = 0; i < Object.keys(introTexts).length; i++) {
 					await showIntro()
 				}
-				localStorageService.setItem<string>('introStatus', 'shown')
+				setTimeout(() => { localStorageService.setItem<string>('introStatus', 'shown') }, 1000)
 			} else {
 				showIntroAllAtOnce()
 			}
