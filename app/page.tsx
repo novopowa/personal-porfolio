@@ -41,7 +41,6 @@ function Home(): React.JSX.Element {
 		<>
 			<Header h1={h1} links={links} selectedPage={selectedPage} />
 			<main ref={mainRef} className='flex-1 bg-cover bg-left relative'>
-				<Start />
 				<About links={links} onScrollInOut={onScrollInOut} />
 				<Projects onScrollInOut={onScrollInOut} />
 				<Experiences onScrollInOut={onScrollInOut} />

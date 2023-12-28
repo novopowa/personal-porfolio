@@ -37,3 +37,8 @@ export const scrollOnClick = (e: React.MouseEvent): void => {
 		behavior: 'smooth'
 	})
 }
+
+export const rangeToPercentage = (value: number, minRange: number, maxRange: number): number => {
+  const porcentaje = (value - minRange) / (maxRange - minRange)
+  return 0 + porcentaje * (1 - 0)
+}
