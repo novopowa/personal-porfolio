@@ -53,13 +53,13 @@ function About({ links, onScrollInOut }: { links: LINKS; onScrollInOut: (page: s
 
 	return (
 		<motion.section  ref={sectionRef} className='page aboutme relative min-h-[155vh] flex flex-col'>
-			<div className='flex flex-col just min-h-[72vh]'>
+			<div className='flex flex-col just min-h-[36vh] lg:min-h-[72vh]'>
 				<Image
 					src='/images/aleixalsina.webp'
 					alt='Aleix Alsina'
 					width={600}
 					height={600}
-					className='max-w-[600px] max-h-[600px] w-4/6 mx-auto mt-auto'
+					className='max-w-[600px] max-h-[600px] w-5/6 sm:w-4/6 mx-auto mt-auto'
 					style={{opacity: photoOpacity }}
 				/>
 			</div>

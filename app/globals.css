@@ -27,6 +27,15 @@ section.page {
 	padding: 4rem 0.9rem;
 }
 
+section.page {
+	padding: 4rem 0.9rem;
+}
+@media only screen and (max-width: 1024px) {
+	section.page {
+		padding: 2rem 0.9rem;
+	}
+}
+
 a {
 	position: relative;
 	text-decoration: underline;

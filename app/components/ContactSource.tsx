@@ -30,20 +30,20 @@ function ContactSource(props: CONTACT_SOURCE): React.JSX.Element {
 				href={props.link}
 				rel='noopener noreferrer'
 				target='_blank'
-				className={`${major.className} text-lg my-3 p-3 rounded-xl border-2 min-w-[25rem]`}>
+				className={`${major.className} text-sm sm:text-lg my-3 p-3 rounded-xl border-2 min-w-[21rem] sm:min-w-[25rem]`}>
 				{props.icon}
 				{props.name}
 				<MdArrowOutward />
 			</a>
 		) : (
 			<button
-				className={`${major.className} text-lg text-left my-3 p-3 rounded-xl border-2 min-w-[25rem]`}
+				className={`${major.className} text-sm sm:text-lg text-left my-3 p-3 rounded-xl border-2 min-w-[21rem] sm:min-w-[25rem]`}
 				onClick={() => {
 					copy(props.name)
 				}}>
 				{props.icon}
 				{props.name}
-				<span className={`float-right text-sm p-1 ${copyText === copyTexts.copy ? 'not-copied' : 'copied'}`}>
+				<span className={`float-right text-sm sm:p-1 ${copyText === copyTexts.copy ? 'not-copied' : 'copied'}`}>
 					{copyText}
 				</span>
 			</button>

@@ -2,7 +2,7 @@ import { type EXPERIENCE } from '@/app/types'
 
 function Experience(props: EXPERIENCE): React.JSX.Element {
 	return (
-		<div className='experience flex gap-3 mb-12 max-w-2xl relative p-3'>
+		<div className='experience flex gap-3 mb-12 max-w-2xl relative lg:p-3'>
 			<div className='years min-w-[9rem] text-sm text-right'>
 				{props.start} — {props.end}
 			</div>

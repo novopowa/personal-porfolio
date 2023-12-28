@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react'
 import Header from './components/Header'
 import { type LINKS } from './types'
-import Start from './pages/start/page'
 import About from './pages/about/page'
 import Projects from './pages/projects/page'
 import Experiences from './pages/experiences/page'

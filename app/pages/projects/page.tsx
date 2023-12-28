@@ -66,7 +66,7 @@ function Projects({ onScrollInOut }: { onScrollInOut: (page: string) => void }):
 	})
 
 	useMotionValueEvent(scrollYProgress, 'change', latest => {
-		if (latest > 0.3) {
+		if (latest > 0.1) {
 			onScrollInOut('projects')
 		}else{
 			onScrollInOut('aboutme')

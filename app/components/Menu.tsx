@@ -49,8 +49,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 		}
 
 		const closeResponsiveMenu = (): void => {
-			menuExternalLinksLeftControls.start({ transform: 'translateX(-200px)' }).then(() => {}, () => {})
-			menuExternalLinksRightControls.start({ transform: 'translateX(200px)' }).then(() => {
+			menuExternalLinksLeftControls.start({ transform: 'translateX(-320px)' }).then(() => {}, () => {})
+			menuExternalLinksRightControls.start({ transform: 'translateX(320px)' }).then(() => {
 				menuLiControls.start({ transform: 'translateX(-150px)',	borderTop: '1px solid transparent' }).then(() => { 
 					menuH1Controls.start({ transform: 'translateY(-30px)' }).then(() => {
 						menuControls.start({ height: 0 }).then(() => {
@@ -80,11 +80,12 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 	return (
 		<>
 			{/* Mobile */}
-			<nav className={'main-menu flex flex-col h-[264px] pt-2 fixed left-0 top-0 right-0 sm:hidden z-10'}>
+			<nav className={'main-menu flex flex-col h-[264px] pt-2 fixed left-0 top-0 right-0 lg:hidden z-10'}>
 				<div className='block'>
 					<button
 						ref={toogleResponsiveMenuButton}
 						className='flex items-center px-3 mr-2 py-2 border rounded float-right relative z-10'
+						style={{ backgroundColor: "var(--tertiary-background-color)" }}
 						onClick={() => {
 							handleResponsiveMenuExpanded()
 						}}>
@@ -115,9 +116,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 				<motion.div
 					{...animationProps}
 					animate={menuControls}
-					className={`${responsiveMenuExpanded ? 'inline' : 'hidden'} relative top-[-2.4rem] h-0  ${
-						responsiveMenuExpanded ? 'bg-black border-b-[1px] border-gray-500' : ''
-					}`}>
+					className={`${responsiveMenuExpanded ? 'inline border-b-[1px] border-gray-500' : 'hidden'} relative top-[-2.4rem] h-0`}
+					style={{ backgroundColor: "var(--tertiary-background-color)" }}>
 					<motion.div
 						{...animationProps}
 						animate={menuH1Controls}
@@ -195,7 +195,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 							rel='noopener noreferrer'
 							href={links.github.href}
 							target='_blank'
-							className='text-3xl items-center [&>svg]:m-auto w-2/4 -translate-x-40'>
+							className='text-3xl items-center [&>svg]:m-auto w-2/4 -translate-x-80'>
 							<FaGithub />
 						</motion.a>
 
@@ -206,7 +206,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 							rel='noopener noreferrer'
 							href={links.linkedin.href}
 							target='_blank'
-							className='text-3xl [&>svg]:m-auto w-2/4 translate-x-40'>
+							className='text-3xl [&>svg]:m-auto w-2/4 translate-x-80'>
 							<FaLinkedin />
 						</motion.a>
 					</div>
@@ -214,7 +214,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 			</nav>
 
 			{/* Desktop */}
-			<nav className={'main-menu flex-col h-auto p-4 static hidden sm:flex'}>
+			<nav className={'main-menu flex-col h-auto p-4 static hidden lg:flex'}>
 				<ul className='flex flex-row justify-between'>
 					<li className='px-3 pl-0 mt-0'>
 						<a

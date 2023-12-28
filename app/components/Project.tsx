@@ -20,7 +20,7 @@ function Project(props: PROJECT): React.JSX.Element {
 					alt={props.name}
 					width={400}
 					height={450}
-					className='w-[400px] h-[450px]'
+					className='max-w-[400px] w-full h-auto'
 				/>
 			</Link>
 			<div className='p-5'>
