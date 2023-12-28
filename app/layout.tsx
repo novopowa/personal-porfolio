@@ -2,18 +2,16 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Aleix Alsina',
-  description: 'The portfolio of Aleix Alsina, Frontend Developer.'
+	title: 'Aleix Alsina',
+	description: 'The portfolio of Aleix Alsina, Frontend Developer.'
 }
 
-export default function RootLayout ({ children }: { children: React.ReactNode }): React.JSX.Element {
-  return (
-    <html lang="es">
-      <body>
-        <div className="lg:flex min-h-screen">
-          {children}
-        </div>
-      </body>
-    </html>
-  )
+export default function RootLayout({ children }: { children: React.ReactNode }): React.JSX.Element {
+	return (
+		<html lang='es'>
+			<body>
+				<div className='lg:flex min-h-screen'>{children}</div>
+			</body>
+		</html>
+	)
 }

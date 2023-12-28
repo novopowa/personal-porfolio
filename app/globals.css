@@ -2,265 +2,247 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --main-background-color: #202731;
-  --main-background-color-rgb: 32,39,49;
-  --secondary-background-color: #13171d;
-  --tertiary-background-color: #38414f;
-  /* Intro */
-  --frontend-developer-color: #f66;
-  
-  /* Main menu */
-  --about-me-color: #ffb366;
-  --projects-color: #6f6;
-  --experiences-color: #6ff;
-  --contact-color: #fff;
-  
-}
+	--main-background-color: #202731;
+	--main-background-color-rgb: 32, 39, 49;
+	--secondary-background-color: #13171d;
+	--tertiary-background-color: #38414f;
+	/* Intro */
+	--frontend-developer-color: #f66;
 
+	/* Main menu */
+	--about-me-color: #ffb366;
+	--projects-color: #6f6;
+	--experiences-color: #6ff;
+	--contact-color: #fff;
+}
 
 body {
-  color: rgb(255, 255, 255);
-  background: var(--main-background-color);
+	color: rgb(255, 255, 255);
+	background: var(--main-background-color);
 }
-
 
 /*Pages*/
-section.page{
-  padding: 4rem 0.9rem;
-  overflow: hidden;
+section.page {
+	padding: 4rem 0.9rem;
+	overflow: hidden;
 }
 
-
-
-a{
-  position: relative;
-  text-decoration: underline;
-  text-underline-offset: 6px;
+a {
+	position: relative;
+	text-decoration: underline;
+	text-underline-offset: 6px;
 }
 
-a:hover{
-  text-decoration: none;
+a:hover {
+	text-decoration: none;
 }
 
-section.aboutme h2{
-  color: var(--about-me-color);
+section.aboutme h2 {
+	color: var(--about-me-color);
 }
-section.projects h2{
-  color: var(--projects-color);
+section.projects h2 {
+	color: var(--projects-color);
 }
-section.experiences h2{
-  color: var(--experiences-color);
+section.experiences h2 {
+	color: var(--experiences-color);
 }
-
-
-
-
-
 
 /*Main menu*/
-.main-menu a{
-  opacity: 0.7;
-  text-decoration: none;
-  white-space: nowrap;
+.main-menu a {
+	opacity: 0.7;
+	text-decoration: none;
+	white-space: nowrap;
 }
 .main-menu a::before {
-  content: '';
-  position: absolute;
-  width: calc(100% + 32px);
-  height: 6px;
-  top: -3px;
-  left: -15px;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .3s ease-in-out;
+	content: '';
+	position: absolute;
+	width: calc(100% + 32px);
+	height: 6px;
+	top: -3px;
+	left: -15px;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
 }
-.main-menu a:hover, .main-menu a.selected{
-  opacity: 1;
+.main-menu a:hover,
+.main-menu a.selected {
+	opacity: 1;
 }
-.main-menu a.aboutme:hover, .main-menu a.aboutme.selected{
-  color: var(--about-me-color);
+.main-menu a.aboutme:hover,
+.main-menu a.aboutme.selected {
+	color: var(--about-me-color);
 }
-.main-menu a.projects:hover, .main-menu a.projects.selected{
-  color: var(--projects-color);
+.main-menu a.projects:hover,
+.main-menu a.projects.selected {
+	color: var(--projects-color);
 }
-.main-menu a.experiences:hover, .main-menu a.experiences.selected{
-  color: var(--experiences-color);
+.main-menu a.experiences:hover,
+.main-menu a.experiences.selected {
+	color: var(--experiences-color);
 }
-.main-menu a.contact:hover, .main-menu a.contact.selected{
-  color: var(--contact-color);
+.main-menu a.contact:hover,
+.main-menu a.contact.selected {
+	color: var(--contact-color);
 }
 
 .main-menu a.selected::before {
-  transform-origin: left;
-  transform: scaleX(1);
+	transform-origin: left;
+	transform: scaleX(1);
 }
-.main-menu a.aboutme::before{
-  background-color: var(--about-me-color);
+.main-menu a.aboutme::before {
+	background-color: var(--about-me-color);
 }
-.main-menu a.projects::before{
-  background-color: var(--projects-color);
+.main-menu a.projects::before {
+	background-color: var(--projects-color);
 }
-.main-menu a.experiences::before{
-  background-color: var(--experiences-color);
+.main-menu a.experiences::before {
+	background-color: var(--experiences-color);
 }
-.main-menu a.contact::before{
-  background-color: var(--contact-color);
+.main-menu a.contact::before {
+	background-color: var(--contact-color);
 }
-
-
-
-
-
 
 /*Intro text*/
-.cursor::after{
-  position: absolute;
-  content: "_";
-  font-weight: 100;
+.cursor::after {
+	position: absolute;
+	content: '_';
+	font-weight: 100;
 }
 
-
-
-a.intro-link span{
-  position: relative;
-  z-index: 1;
+a.intro-link span {
+	position: relative;
+	z-index: 1;
 }
-a.intro-link:after{
-  content:" ";
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  left: 0;
-  bottom: -6px;
-  transition: height 300ms ease-out,
-              width 300ms ease-out,
-              color 300ms ease-out,
-              left 300ms ease-out;
+a.intro-link:after {
+	content: ' ';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	left: 0;
+	bottom: -6px;
+	transition:
+		height 300ms ease-out,
+		width 300ms ease-out,
+		color 300ms ease-out,
+		left 300ms ease-out;
 }
-a.intro-link:hover, a.intro-link.selected{
-  color: var(--main-background-color);
-  text-decoration: none;
+a.intro-link:hover,
+a.intro-link.selected {
+	color: var(--main-background-color);
+	text-decoration: none;
 }
-a.intro-link:hover::after, a.intro-link.selected::after{
-  height: 2.4rem;
-  width: 104%;
-  left: -4px;
+a.intro-link:hover::after,
+a.intro-link.selected::after {
+	height: 2.4rem;
+	width: 104%;
+	left: -4px;
 }
-a.intro-link.about:after{
-  background-color: var(--about-me-color);
+a.intro-link.about:after {
+	background-color: var(--about-me-color);
 }
-a.intro-link.projects:after{
-  background-color: var(--projects-color);
+a.intro-link.projects:after {
+	background-color: var(--projects-color);
 }
-a.intro-link.experiences:after{
-  background-color: var(--experiences-color);
-}
-
-
-h2{
-  text-shadow: 0 0 15px;
+a.intro-link.experiences:after {
+	background-color: var(--experiences-color);
 }
 
-
-
+h2 {
+	text-shadow: 0 0 15px;
+}
 
 /*About me*/
 
-.aboutme p a svg{
-  display: inline;
+.aboutme p a svg {
+	display: inline;
 }
 
-.aboutme h2 a{
-  border: 1px solid var(--about-me-color);
-  color: var(--about-me-color);
+.aboutme h2 a {
+	border: 1px solid var(--about-me-color);
+	color: var(--about-me-color);
 }
 
-.aboutme h2 a.transparent{
-  border-color: var(--main-background-color);
-  color: var(--main-background-color);
+.aboutme h2 a.transparent {
+	border-color: var(--main-background-color);
+	color: var(--main-background-color);
 }
 
-.aboutme a.project-link{
-  color: var(--projects-color);
+.aboutme a.project-link {
+	color: var(--projects-color);
 }
-
-
-
-
-
 
 /*Project*/
 
-.project{
-  background-color: var(--secondary-background-color);
+.project {
+	background-color: var(--secondary-background-color);
 }
 
-.project h3{
-  color: var(--projects-color)
+.project h3 {
+	color: var(--projects-color);
 }
 
-.project .button{
-  background-color: var(--tertiary-background-color);
-  transition: background-color 300ms ease-out,
-              color 200ms ease-out;
+.project .button {
+	background-color: var(--tertiary-background-color);
+	transition:
+		background-color 300ms ease-out,
+		color 200ms ease-out;
 }
 
-.project .button:hover{
-  background-color: var(--projects-color);
-  color: var(--secondary-background-color)
+.project .button:hover {
+	background-color: var(--projects-color);
+	color: var(--secondary-background-color);
 }
 
-.project a.image{
-  transition: filter 200ms ease-out
+.project a.image {
+	transition: filter 200ms ease-out;
 }
 
-.project a.image img:hover, .project a.image span:hover + img{
-  filter: blur(5px);
+.project a.image img:hover,
+.project a.image span:hover + img {
+	filter: blur(5px);
 }
 
-.project a.image:hover span{
-  display: block;
-  background-color: rgba(6, 6, 6, 0.7);
-  color: var(--projects-color)
+.project a.image:hover span {
+	display: block;
+	background-color: rgba(6, 6, 6, 0.7);
+	color: var(--projects-color);
 }
 
-.project svg{
-  display: inline-block;
+.project svg {
+	display: inline-block;
 }
-
 
 /* Experiencies */
 
-.experiences h3{
-  color: var(--experiences-color);
+.experiences h3 {
+	color: var(--experiences-color);
 }
 
-.experiences .years, .experiences h4{
-  opacity: 0.7;
-} 
-
-.experiences .tag{
-  color: var(--experiences-color);
-  background-color: var(--tertiary-background-color);
+.experiences .years,
+.experiences h4 {
+	opacity: 0.7;
 }
 
+.experiences .tag {
+	color: var(--experiences-color);
+	background-color: var(--tertiary-background-color);
+}
 
 /*Contact*/
 
-.contact svg{
-  display: inline-block;
-  margin-right: 10px;
+.contact svg {
+	display: inline-block;
+	margin-right: 10px;
 }
 
-.copied{
-  color: var(--projects-color);
-  text-shadow: 0 0 25px;
+.copied {
+	color: var(--projects-color);
+	text-shadow: 0 0 25px;
 }
 
-.not-copied{
-  color: inherit;
-  opacity: 0.8;
-  transition: color 700ms ease-out;
+.not-copied {
+	color: inherit;
+	opacity: 0.8;
+	transition: color 700ms ease-out;
 }
