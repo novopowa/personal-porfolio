@@ -195,7 +195,7 @@ function Intro({ links, selectedPage }: { links: LINKS; selectedPage: string }):
 
 	// RENDER
 	return (
-		<div className='intro font-bold pl-2 pr-0 py-4 sm:p-6 text-lg sm:text-3xl flex-1 w-[23rem] sm:w-[36rem] min-h-[33rem] lg:min-h-auto'>
+		<div className='intro font-bold pl-2 pr-0 py-4 sm:p-6 text-lg sm:text-3xl flex-1 w-[21rem] sm:w-[36rem] min-h-[33rem] lg:min-h-auto'>
 			{Object.keys(introTexts).map((dataKey, i) => {
 				return (
 					<p key={i} className={`block mb-6 ${showCursorsClass[i] ? 'cursor' : ''}`}>
