@@ -10,7 +10,7 @@ import Contact from './pages/contact'
 
 function Home(): React.JSX.Element {
 	const links: LINKS = {
-		homepage: { title: 'homepage', href: '' },
+		homepage: { title: 'homepage', href: '/' },
 		aboutme: { title: 'sobre mi', href: '#sobremi' },
 		projects: { title: 'proyectos', href: '#proyectos' },
 		experience: { title: 'experiencia', href: '#experiencia' },
