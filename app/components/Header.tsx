@@ -1,6 +1,6 @@
 import { Major_Mono_Display } from 'next/font/google'
 import Menu from './Menu'
-import Intro from './Intro'
+// import Intro from './Intro'
 import { type LINKS } from '../types'
 
 const major = Major_Mono_Display({ subsets: ['latin'], weight: '400' })
