@@ -9,7 +9,7 @@ function Header({ h1, links, selectedPage }: { h1: string; links: LINKS; selecte
 	return (
 		<header
 			className={`flex flex-col mt-0 mx-auto w-screen sm:w-[36rem] lg:w-auto lg:flex-[0_0_36rem] max-h-screen lg:sticky top-0 ${major.className}`}>
-			<Intro selectedPage={selectedPage} links={links} />
+			{/* <Intro selectedPage={selectedPage} links={links} /> */}
 			<Menu selectedPage={selectedPage} h1={h1} links={links} />
 		</header>
 	)

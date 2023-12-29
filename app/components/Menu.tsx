@@ -36,7 +36,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 	useEffect(() => {
 		const openResponsiveMenu = (): void => {
 			setResponsiveMenuExpanded(true)
-			menuControls.start({ height: 264 }).then(() => {
+			menuControls.start({ height: 283 }).then(() => {
 				menuH1Controls.start({ transform: 'translateY(0)' }).then(() => {
 					menuLiControls.start({ transform: 'translateX(0)',	borderTop: '1px solid #777'}).then(() => {
 						menuExternalLinksLeftControls.start({ transform: 'translateX(0)' }).then(() => {}, () => {})
@@ -52,7 +52,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 			menuExternalLinksLeftControls.start({ transform: 'translateX(-320px)' }).then(() => {}, () => {})
 			menuExternalLinksRightControls.start({ transform: 'translateX(320px)' }).then(() => {
 				menuLiControls.start({ transform: 'translateX(-400px)',	borderTop: '1px solid transparent' }).then(() => { 
-					menuH1Controls.start({ transform: 'translateY(-30px)' }).then(() => {
+					menuH1Controls.start({ transform: 'translateY(-56px)' }).then(() => {
 						menuControls.start({ height: 0 }).then(() => {
 							setResponsiveMenuExpanded(false)
 							toogleResponsiveMenuButton.current!.disabled = false
@@ -80,7 +80,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 	return (
 		<>
 			{/* Mobile */}
-			<nav className={`main-menu flex flex-col pt-4 fixed left-0 top-0 right-0 lg:hidden z-10 ${responsiveMenuExpanded ? 'h-[264px]' : ''}`}>
+			<nav className={`main-menu flex flex-col pt-4 fixed left-0 top-0 right-0 lg:hidden z-10 ${responsiveMenuExpanded ? 'h-[283px]' : ''}`}>
 				<div className='block'>
 					<button
 						ref={toogleResponsiveMenuButton}
@@ -108,8 +108,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						{...animationProps}
 						animate={menuH1Controls}
 						transition={{ ...animationProps.transition }}
-						className='flex items-center flex-shrink-0 text-white mr-6 -translate-y-8'>
-						<h1 className='font-bold inline px-4 pt-4'>
+						className='flex items-center flex-shrink-0 text-white mr-6 -translate-y-14'>
+						<h1 className='font-bold inline px-4 pt-5 pb-2'>
 							<a aria-label={h1} href={links.homepage.href}>{h1}</a>
 						</h1>
 					</motion.div>
