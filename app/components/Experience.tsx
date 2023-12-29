@@ -7,7 +7,7 @@ function Experience(props: EXPERIENCE): React.JSX.Element {
 				{props.start} — {props.end}
 			</div>
 			<div className='[&>p]:mb-2'>
-				<h3 className='text-lg font-bold leading-4 mb-2'>{props.position}</h3>
+				<h3 className='text-lg font-bold -mt-1 mb-2'>{props.position}</h3>
 				<h4 className='mb-2'>
 					{props.company} ({props.location})
 				</h4>
