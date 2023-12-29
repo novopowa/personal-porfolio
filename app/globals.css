@@ -98,6 +98,7 @@ section.experiences h2 {
 	transform-origin: left;
 	transform: scaleX(1);
 }
+
 .main-menu a.aboutme::before {
 	background-color: var(--about-me-color);
 }

@@ -51,7 +51,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 		const closeResponsiveMenu = (): void => {
 			menuExternalLinksLeftControls.start({ transform: 'translateX(-320px)' }).then(() => {}, () => {})
 			menuExternalLinksRightControls.start({ transform: 'translateX(320px)' }).then(() => {
-				menuLiControls.start({ transform: 'translateX(-150px)',	borderTop: '1px solid transparent' }).then(() => { 
+				menuLiControls.start({ transform: 'translateX(-400px)',	borderTop: '1px solid transparent' }).then(() => { 
 					menuH1Controls.start({ transform: 'translateY(-30px)' }).then(() => {
 						menuControls.start({ height: 0 }).then(() => {
 							setResponsiveMenuExpanded(false)
@@ -117,7 +117,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 								...animationProps.transition,
 								delay: animationProps.transition.delay + delays[0]
 							}}
-							className='px-3 pl-0 mt-3 -translate-x-40'>
+							className='px-3 pl-0 mt-3 -translate-x-96'>
 							<a
 								onClick={scrollOnClick}
 								className={`inline-block py-2 px-4 w-full aboutme ${selectedPage === 'aboutme' ? 'selected' : ''}`}
@@ -131,7 +131,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 								...animationProps.transition,
 								delay: animationProps.transition.delay + delays[1]
 							}}
-							className='px-3 pl-0 -translate-x-40'>
+							className='px-3 pl-0 -translate-x-96'>
 							<a
 								onClick={scrollOnClick}
 								className={`inline-block py-2 px-4 w-full projects ${selectedPage === 'projects' ? 'selected' : ''}`}
@@ -145,7 +145,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 								...animationProps.transition,
 								delay: animationProps.transition.delay + delays[2]
 							}}
-							className='px-3 pl-0 -translate-x-40'>
+							className='px-3 pl-0 -translate-x-96'>
 							<a
 								onClick={scrollOnClick}
 								className={`inline-block py-2 px-4 w-full experiences ${
@@ -161,7 +161,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 								...animationProps.transition,
 								delay: animationProps.transition.delay + delays[3]
 							}}
-							className='px-3 pl-0 -translate-x-40'>
+							className='px-3 pl-0 -translate-x-96'>
 							<a
 								onClick={scrollOnClick}
 								className={`inline-block py-2 px-4 w-full contact ${selectedPage === 'contact' ? 'selected' : ''}`}
