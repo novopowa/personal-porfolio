@@ -3,10 +3,10 @@
 import { useRef, useState } from 'react'
 import Header from './components/Header'
 import { type LINKS } from './types'
-import About from './pages/about/page'
-import Projects from './pages/projects/page'
-import Experiences from './pages/experiences/page'
-import Contact from './pages/contact/page'
+import About from './pages/aboutme'
+import Projects from './pages/projects'
+import Experiences from './pages/experiences'
+import Contact from './pages/contact'
 
 function Home(): React.JSX.Element {
 	const links: LINKS = {
@@ -40,10 +40,10 @@ function Home(): React.JSX.Element {
 		<>
 			<Header h1={h1} links={links} selectedPage={selectedPage} />
 			<main ref={mainRef} className='flex-1 bg-cover bg-left relative'>
-				<About links={links} onScrollInOut={onScrollInOut} />
+				<About onScrollInOut={onScrollInOut} links={links} />
 				<Projects onScrollInOut={onScrollInOut} />
 				<Experiences onScrollInOut={onScrollInOut} />
-				<Contact links={links} onScrollInOut={onScrollInOut} />
+				<Contact onScrollInOut={onScrollInOut} links={links} />
 			</main>
 		</>
 	)

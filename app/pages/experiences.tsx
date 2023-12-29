@@ -1,3 +1,5 @@
+'use client'
+
 import Experience from '@/app/components/Experience'
 import H2 from '@/app/components/ui/H2'
 import { type EXPERIENCE } from '@/app/types'

@@ -1,3 +1,5 @@
+'use client'
+
 import ContactSource from '@/app/components/ContactSource'
 import H2 from '@/app/components/ui/H2'
 import { type CONTACT_SOURCE, type LINKS } from '@/app/types'
@@ -6,7 +8,7 @@ import { useRef } from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-function Contact({ links, onScrollInOut }: { links: LINKS; onScrollInOut: (page: string) => void }): React.JSX.Element {
+function Contact({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page: string) => void }): React.JSX.Element {
 	const contactSources: CONTACT_SOURCE[] = [
 		{
 			icon: <AiOutlineMail />,

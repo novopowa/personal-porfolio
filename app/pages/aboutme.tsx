@@ -1,3 +1,5 @@
+'use client'
+
 import H2 from '@/app/components/ui/H2'
 import { type LINKS } from '@/app/types'
 import { calculateAge, rangeToPercentage, scrollOnClick } from '@/app/utils/functions'
@@ -9,7 +11,7 @@ import { useEffect, useRef, useState } from 'react'
 import { MdArrowOutward } from 'react-icons/md'
 import { IoIosArrowRoundDown } from 'react-icons/io'
 
-function About({ links, onScrollInOut }: { links: LINKS; onScrollInOut: (page: string) => void }): React.JSX.Element {
+function About({ onScrollInOut, links }: { onScrollInOut: (page: string) => void; links: LINKS }): React.JSX.Element {
 	const [showArrow, setShowArrow] = useState(true)
 	const [noMoreArrow, setNoMoreArrow] = useState(false)
 

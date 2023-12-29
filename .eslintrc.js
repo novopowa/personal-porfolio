@@ -3,11 +3,15 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
+    "settings": {
+        "react": { "version": "detect" }
+    },
     "extends": [
         "standard-with-typescript",
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
-        "eslint-config-prettier"
+        "eslint-config-prettier",
+        "plugin:@next/next/recommended"
     ],
     "overrides": [
         {
