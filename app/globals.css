@@ -20,6 +20,7 @@
 body {
 	color: rgb(255, 255, 255);
 	background: var(--main-background-color);
+	scroll-margin-top: 20px;
 }
 
 /*Pages*/

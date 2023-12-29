@@ -11,6 +11,7 @@ function Project(props: PROJECT): React.JSX.Element {
 			</>
 		)
 	}
+
 	return (
 		<div className='project w-full max-w-sm rounded-lg overflow-hidden relative'>
 			<Link href={props.url} rel='noopener noreferrer' target='_blank' className='image block'>
