@@ -86,6 +86,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						ref={toogleResponsiveMenuButton}
 						className='flex items-center px-3 mr-2 py-2 border rounded float-right relative z-10'
 						style={{ backgroundColor: "var(--tertiary-background-color)" }}
+						aria-expanded={responsiveMenuExpanded}
 						onClick={() => {
 							handleResponsiveMenuExpanded()
 						}}>
@@ -100,7 +101,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 					{...animationProps}
 					animate={menuControls}
 					className={`${responsiveMenuExpanded ? 'inline border-b-[1px] border-gray-500' : 'hidden'} relative top-[-2.4rem] h-0`}
-					style={{ backgroundColor: "var(--tertiary-background-color)" }}>
+					style={{ backgroundColor: "var(--tertiary-background-color)" }}
+					aria-hidden={!responsiveMenuExpanded}>
 					<motion.div
 						{...animationProps}
 						animate={menuH1Controls}
