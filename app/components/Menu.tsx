@@ -87,6 +87,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						className='flex items-center px-3 mr-2 py-2 border rounded float-right relative z-10'
 						style={{ backgroundColor: "var(--tertiary-background-color)" }}
 						aria-expanded={responsiveMenuExpanded}
+						aria-label="Abrir menú de navegación"
 						onClick={() => {
 							handleResponsiveMenuExpanded()
 						}}>
@@ -109,7 +110,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						transition={{ ...animationProps.transition }}
 						className='flex items-center flex-shrink-0 text-white mr-6 -translate-y-8'>
 						<h1 className='font-bold inline px-4 pt-2'>
-							<a href={links.homepage.href}>{h1}</a>
+							<a aria-label={h1} href={links.homepage.href}>{h1}</a>
 						</h1>
 					</motion.div>
 					<ul className='flex flex-col justify-between'>
@@ -123,7 +124,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 							<a
 								onClick={scrollOnClick}
 								className={`inline-block py-2 px-4 w-full aboutme ${selectedPage === 'aboutme' ? 'selected' : ''}`}
-								href={links.aboutme.href}>
+								href={links.aboutme.href}
+								aria-label={links.aboutme.title}>
 								{links.aboutme.title}
 							</a>
 						</motion.li>
@@ -137,7 +139,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 							<a
 								onClick={scrollOnClick}
 								className={`inline-block py-2 px-4 w-full projects ${selectedPage === 'projects' ? 'selected' : ''}`}
-								href={links.projects.href}>
+								href={links.projects.href}
+								aria-label={links.projects.title}>
 								{links.projects.title}
 							</a>
 						</motion.li>
@@ -153,7 +156,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 								className={`inline-block py-2 px-4 w-full experiences ${
 									selectedPage === 'experiences' ? 'selected' : ''
 								}`}
-								href={links.experience.href}>
+								href={links.experience.href}
+								aria-label={links.experience.title}>
 								{links.experience.title}
 							</a>
 						</motion.li>
@@ -167,7 +171,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 							<a
 								onClick={scrollOnClick}
 								className={`inline-block py-2 px-4 w-full contact ${selectedPage === 'contact' ? 'selected' : ''}`}
-								href={links.contact.href}>
+								href={links.contact.href}
+								aria-label={links.contact.title}>
 								{links.contact.title}
 							</a>
 						</motion.li>
@@ -205,7 +210,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						<a
 							onClick={scrollOnClick}
 							className={`inline-block py-2 aboutme ${selectedPage === 'aboutme' ? 'selected' : ''}`}
-							href={links.aboutme.href}>
+							href={links.aboutme.href}
+							aria-label={links.aboutme.title}>
 							{links.aboutme.title}
 						</a>
 					</li>
@@ -221,7 +227,8 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						<a
 							onClick={scrollOnClick}
 							className={`inline-block py-2 experiences ${selectedPage === 'experiences' ? 'selected' : ''}`}
-							href={links.experience.href}>
+							href={links.experience.href}
+							aria-label={links.experience.title}>
 							{links.experience.title}
 						</a>
 					</li>
@@ -240,10 +247,16 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						rel='noopener noreferrer'
 						href={links.github.href}
 						target='_blank'
-						className='px-3 text-2xl items-center [&>svg]:m-0'>
+						className='px-3 text-2xl items-center [&>svg]:m-0'
+						aria-label={links.github.title}>
 						<FaGithub />
 					</a>
-					<a rel='noopener noreferrer' href={links.linkedin.href} target='_blank' className='text-2xl [&>svg]:m-0'>
+					<a 
+					rel='noopener noreferrer' 
+					href={links.linkedin.href} 
+					target='_blank' 
+					className='text-2xl [&>svg]:m-0' 
+					aria-label={links.linkedin.title}>
 						<FaLinkedin />
 					</a>
 				</div>

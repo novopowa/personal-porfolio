@@ -42,10 +42,7 @@ function Intro({ links, selectedPage }: { links: LINKS; selectedPage: string }):
 		<>
 			me llamo{' '}
 			<motion.span {...animationProps} animate={{ color: '#FFF' }}>
-				<a href={links.homepage.href} style={{ textDecoration: 'none' }}>
-					{' '}
-					Aleix Alsina
-				</a>
+				Aleix Alsina
 			</motion.span>
 		</>,
 
@@ -62,7 +59,9 @@ function Intro({ links, selectedPage }: { links: LINKS; selectedPage: string }):
 				<a
 					onClick={scrollOnClick}
 					className={`intro-link about ${selectedPage === 'aboutme' ? 'selected' : ''}`}
-					href={links.aboutme.href}>
+					href={links.aboutme.href}
+					aria-label={links.aboutme.title}
+					>
 					<span>{links.aboutme.title}</span>
 				</a>
 			</motion.span>
@@ -74,7 +73,8 @@ function Intro({ links, selectedPage }: { links: LINKS; selectedPage: string }):
 				<a
 					onClick={scrollOnClick}
 					className={`intro-link projects ${selectedPage === 'projects' ? 'selected' : ''}`}
-					href={links.projects.href}>
+					href={links.projects.href}
+					aria-label={links.projects.title}>
 					<span>{links.projects.title}</span>
 				</a>
 			</motion.span>{' '}
@@ -83,7 +83,8 @@ function Intro({ links, selectedPage }: { links: LINKS; selectedPage: string }):
 				<a
 					onClick={scrollOnClick}
 					className={`intro-link experiences ${selectedPage === 'experiences' ? 'selected' : ''}`}
-					href={links.experience.href}>
+					href={links.experience.href}
+					aria-label={links.experience.title}>
 					<span>{links.experience.title}</span>
 				</a>
 			</motion.span>

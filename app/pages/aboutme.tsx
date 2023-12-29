@@ -20,7 +20,8 @@ function About({ onScrollInOut, links }: { onScrollInOut: (page: string) => void
 			<a
 				href={links.aboutme.href}
 				onClick={scrollOnClick}
-				className={`absolute ml-3 opacity-60 rounded-full ${showArrow && !noMoreArrow ? '' : 'transparent'}`}>
+				className={`absolute ml-3 opacity-60 rounded-full ${showArrow && !noMoreArrow ? '' : 'transparent'}`}
+				aria-label='Haz scroll para ver más'>
 				<IoIosArrowRoundDown />
 			</a>
 		)
@@ -78,8 +79,8 @@ function About({ onScrollInOut, links }: { onScrollInOut: (page: string) => void
 						En la actualidad, con {calculateAge(1989)} años, he acumulado experiencia trabajando para diversas empresas y{' '}
 						<strong>
 							he participado en la creación de una amplia variedad de{' '}
-							<a className='project-link' onClick={scrollOnClick} href={links.projects.href}>
-								proyectos
+							<a className='project-link' onClick={scrollOnClick} href={links.projects.href} aria-label={links.projects.title}>
+								{links.projects.title}
 							</a>
 						</strong>
 						.

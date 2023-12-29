@@ -38,6 +38,7 @@ function ContactSource(props: CONTACT_SOURCE): React.JSX.Element {
 		) : (
 			<button
 				className={`${major.className} text-sm sm:text-lg text-left my-3 p-3 rounded-xl border-2 min-w-[21rem] sm:min-w-[25rem]`}
+				aria-label="Copiar mi dirección e-mail"
 				onClick={() => {
 					copy(props.name)
 				}}>
