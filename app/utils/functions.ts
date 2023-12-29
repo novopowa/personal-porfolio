@@ -31,10 +31,8 @@ export function calculateAge(birthyear: number): string {
 export const scrollOnClick = (e: React.MouseEvent): void => {
 	e.preventDefault()
 	const target = document.querySelector((e.currentTarget as HTMLAnchorElement).hash)
-	const top = (target as HTMLAnchorElement).offsetTop - 0.6
-	window.scrollTo({
-		top,
-		behavior: 'smooth'
+	target!.scrollIntoView({
+		behavior: 'smooth', block: 'start'
 	})
 }
 

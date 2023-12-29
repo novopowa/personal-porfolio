@@ -80,7 +80,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 	return (
 		<>
 			{/* Mobile */}
-			<nav className={'main-menu flex flex-col h-[264px] pt-2 fixed left-0 top-0 right-0 lg:hidden z-10'}>
+			<nav className={`main-menu flex flex-col pt-2 fixed left-0 top-0 right-0 lg:hidden z-10 ${responsiveMenuExpanded ? 'h-[264px]' : ''}`}>
 				<div className='block'>
 					<button
 						ref={toogleResponsiveMenuButton}
@@ -90,26 +90,9 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 							handleResponsiveMenuExpanded()
 						}}>
 						<svg className='fill-current h-3 w-3' viewBox='0 0 20 20'>
-							<line
-								x1='0'
-								y1='0'
-								x2='20'
-								y2='20'
-								className={`${responsiveMenuExpanded ? '' : 'hidden'}`}
-								style={{ stroke: '#fff', strokeWidth: 3 }}
-							/>
-							<line
-								x1='20'
-								y1='0'
-								x2='0'
-								y2='20'
-								className={`${responsiveMenuExpanded ? '' : 'hidden'}`}
-								style={{ stroke: '#fff', strokeWidth: 3 }}
-							/>
-							<path
-								className={`${responsiveMenuExpanded ? 'hidden' : ''}`}
-								d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'
-							/>
+							<line	x1='0' y1='0'	x2='20'	y2='20'	className={`${responsiveMenuExpanded ? '' : 'hidden'}`}	style={{ stroke: '#fff', strokeWidth: 3 }} />
+							<line	x1='20'	y1='0' x2='0'	y2='20'	className={`${responsiveMenuExpanded ? '' : 'hidden'}`}	style={{ stroke: '#fff', strokeWidth: 3 }} />
+							<path	className={`${responsiveMenuExpanded ? 'hidden' : ''}`}	d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'	/>
 						</svg>
 					</button>
 				</div>
