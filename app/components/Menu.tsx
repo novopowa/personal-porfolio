@@ -80,11 +80,11 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 	return (
 		<>
 			{/* Mobile */}
-			<nav className={`main-menu flex flex-col pt-2 fixed left-0 top-0 right-0 lg:hidden z-10 ${responsiveMenuExpanded ? 'h-[264px]' : ''}`}>
+			<nav className={`main-menu flex flex-col pt-4 fixed left-0 top-0 right-0 lg:hidden z-10 ${responsiveMenuExpanded ? 'h-[264px]' : ''}`}>
 				<div className='block'>
 					<button
 						ref={toogleResponsiveMenuButton}
-						className='flex items-center px-3 mr-2 py-2 border rounded float-right relative z-10'
+						className='flex items-center px-3 mr-4 py-2 border rounded float-right relative z-10'
 						style={{ backgroundColor: "var(--tertiary-background-color)" }}
 						aria-expanded={responsiveMenuExpanded}
 						aria-label="Abrir menú de navegación"
@@ -101,7 +101,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 				<motion.div
 					{...animationProps}
 					animate={menuControls}
-					className={`${responsiveMenuExpanded ? 'inline border-b-[1px] border-gray-500' : 'hidden'} relative top-[-2.4rem] h-0`}
+					className={`${responsiveMenuExpanded ? 'inline border-b-[1px] border-gray-500' : 'hidden'} relative top-[-2.9rem] h-0`}
 					style={{ backgroundColor: "var(--tertiary-background-color)" }}
 					aria-hidden={!responsiveMenuExpanded}>
 					<motion.div
@@ -109,7 +109,7 @@ function Menu({ h1, links, selectedPage }: { h1: string; links: LINKS; selectedP
 						animate={menuH1Controls}
 						transition={{ ...animationProps.transition }}
 						className='flex items-center flex-shrink-0 text-white mr-6 -translate-y-8'>
-						<h1 className='font-bold inline px-4 pt-2'>
+						<h1 className='font-bold inline px-4 pt-4'>
 							<a aria-label={h1} href={links.homepage.href}>{h1}</a>
 						</h1>
 					</motion.div>
