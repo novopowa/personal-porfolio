@@ -26,7 +26,7 @@ function Home(): React.JSX.Element {
 		instagram: { title: '', href: 'https://www.instagram.com/axel.adventure/' }
 	}
 
-	const h1: string = 'AleixAlsina.dev'
+	const h1: string = 'Aleix Alsina'
 
 	const mainRef = useRef<HTMLElement>(null)
 
