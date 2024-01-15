@@ -17,7 +17,7 @@ function Experiences({ onScrollInOut }: { onScrollInOut: (page: string) => void 
 			desc: (
 				<>
 					<p>Desarrollo de funciones web en PHP y JavaScript.</p>
-					<p>Gestíón de BBDD MySQL.</p>
+					<p>Gestión de BBDD MySQL.</p>
 				</>
 			),
 			technologies: ['PHP', 'JavaScript', 'MySQL']
