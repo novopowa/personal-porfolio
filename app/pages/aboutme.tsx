@@ -55,7 +55,7 @@ function About({ onScrollInOut, links }: { onScrollInOut: (page: string) => void
 	})
 
 	return (
-		<motion.section  ref={sectionRef} className='page aboutme relative min-h-[155vh] flex flex-col'>
+		<motion.section ref={sectionRef} className='page aboutme relative min-h-[155vh] flex flex-col'>
 			<div className='flex flex-col just min-h-[36vh] lg:min-h-[72vh]'>
 				<Image
 					src='/images/aleixalsina.webp'
@@ -63,7 +63,7 @@ function About({ onScrollInOut, links }: { onScrollInOut: (page: string) => void
 					width={600}
 					height={600}
 					className='max-w-[600px] max-h-[600px] w-5/6 sm:w-4/6 mx-auto mt-auto'
-					style={{opacity: photoOpacity }}
+					style={{ opacity: photoOpacity }}
 				/>
 			</div>
 			<div id='sobremi'>
@@ -76,18 +76,23 @@ function About({ onScrollInOut, links }: { onScrollInOut: (page: string) => void
 						<strong>A los 15 años creé mi primera página en HTML</strong> y supe que el desarrollo web era mi vocación.
 					</p>
 					<p className='my-4'>
-						En la actualidad, con {calculateAge(1989)} años, he acumulado experiencia trabajando para diversas empresas y{' '}
+						En la actualidad, con {calculateAge(1990)} años, he acumulado experiencia trabajando para diversas empresas
+						y{' '}
 						<strong>
 							he participado en la creación de una amplia variedad de{' '}
-							<a className='project-link' onClick={scrollOnClick} href={links.projects.href} aria-label={links.projects.title}>
+							<a
+								className='project-link'
+								onClick={scrollOnClick}
+								href={links.projects.href}
+								aria-label={links.projects.title}>
 								{links.projects.title}
 							</a>
 						</strong>
 						.
 					</p>
 					<p className='my-4'>
-						En los últimos años <strong>he enfocado mi especialización en el desarrollo Frontend</strong>, ya que siempre
-						ha sido la parte del desarrollo que más he disfrutado.
+						En los últimos años <strong>he enfocado mi especialización en el desarrollo Frontend</strong>, ya que
+						siempre ha sido la parte del desarrollo que más he disfrutado.
 					</p>
 					<p className='my-4'>
 						Cuando no estoy frente a la pantalla, normalmente estoy jugando a D&D, tocando la batería o{' '}
