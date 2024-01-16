@@ -4,6 +4,10 @@
 
 Este proyecto es mi portafolio personal, donde muestro los proyectos en los que he trabajado a lo largo de mi carrera como desarrollador web. Está construido con Next.js, Tailwind CSS y TypeScript.
 
+## Página web
+
+[aleixalsina.vercel.app](https://aleixalsina.vercel.app)
+
 ## Tecnologías Utilizadas
 
 - [Next.js](https://nextjs.org/)
