@@ -25,3 +25,5 @@ Una vez que hayas instalado las dependencias, puedes iniciar el servidor de desa
 ```bash
 npm run dev
 ```
+
+Y finalmente puedes acceder a la web a través de la url: [localhost:3000](http://localhost:3000)
