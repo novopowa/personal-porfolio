@@ -55,7 +55,7 @@ function About({ onScrollInOut, links }: { onScrollInOut: (page: string) => void
 	})
 
 	return (
-		<motion.section ref={sectionRef} className='page aboutme relative min-h-[155vh] flex flex-col'>
+		<motion.section ref={sectionRef} className='page aboutme relative min-h-[80vh] lg:min-h-[155vh] flex flex-col'>
 			<div className='flex flex-col just min-h-[36vh] lg:min-h-[72vh]'>
 				<Image
 					src='/images/aleixalsina.webp'
