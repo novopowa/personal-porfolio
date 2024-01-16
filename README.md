@@ -16,8 +16,8 @@ Este proyecto es mi portafolio personal, donde muestro los proyectos en los que 
 
 ## Instalación
 
-1. Clona este repositorio: `git clone https://github.com/novopowa/aleixalsina.dev.git`
-2. Accede al directorio del proyecto: `cd aleixalsina`
+1. Clona este repositorio: `git clone https://github.com/novopowa/personal-porfolio.git`
+2. Accede al directorio del proyecto: `cd personal-porfolio`
 3. Instala las dependencias: `npm install`
 
 ## Uso
@@ -28,4 +28,4 @@ Una vez que hayas instalado las dependencias, puedes iniciar el servidor de desa
 npm run dev
 ```
 
-Y finalmente puedes acceder a la web a través de la url: [localhost:3000](http://localhost:3000)
+Y puedes acceder a la web a través de la url: [localhost:3000](http://localhost:3000)
