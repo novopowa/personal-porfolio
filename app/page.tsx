@@ -7,6 +7,7 @@ import About from './pages/aboutme'
 import Projects from './pages/projects'
 import Experiences from './pages/experiences'
 import Contact from './pages/contact'
+import Footer from './pages/footer'
 
 function Home(): React.JSX.Element {
 	const links: LINKS = {
@@ -44,6 +45,7 @@ function Home(): React.JSX.Element {
 				<Projects onScrollInOut={onScrollInOut} />
 				<Experiences onScrollInOut={onScrollInOut} />
 				<Contact onScrollInOut={onScrollInOut} links={links} />
+				<Footer />
 			</main>
 		</>
 	)

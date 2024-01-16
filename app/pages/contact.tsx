@@ -8,7 +8,7 @@ import { useRef } from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-function Contact({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page: string) => void }): React.JSX.Element {
+function Contact({ links, onScrollInOut }: { links: LINKS; onScrollInOut: (page: string) => void }): React.JSX.Element {
 	const contactSources: CONTACT_SOURCE[] = [
 		{
 			icon: <AiOutlineMail />,
@@ -43,7 +43,7 @@ function Contact({ links, onScrollInOut }: { links: LINKS, onScrollInOut: (page:
 	})
 
 	return (
-		<motion.section ref={sectionRef} id='contacto' className='page contact min-h-screen relative flex flex-col '>
+		<motion.section ref={sectionRef} id='contacto' className='page contact min-h-[93vh] relative flex flex-col '>
 			<H2>Contacto</H2>
 			<div className='relative flex flex-col justify-center mx-auto'>
 				{contactSources.map((source, i) => {
