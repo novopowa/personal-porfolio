@@ -9,6 +9,12 @@ import { useRef } from 'react'
 function Projects({ onScrollInOut }: { onScrollInOut: (page: string) => void }): React.JSX.Element {
 	const projects: PROJECT[] = [
 		{
+			image: 'shorly.webp',
+			name: 'Shorly - The URL Shortener Project',
+			desc: 'Web App para acortar URLs. Programada en React con Next.js, TailwindCSS y Supabase.',
+			url: 'https://shorly.pw'
+		},
+		{
 			image: 'combeleditorial.webp',
 			name: 'Combel Editorial',
 			desc: 'Programación y maquetación de la web de la editorial Combel en Español, Catalán e Inglés.',
@@ -49,12 +55,6 @@ function Projects({ onScrollInOut }: { onScrollInOut: (page: string) => void }):
 			name: 'Vial Clic',
 			desc: 'Programación frontend y maquetación de la página corporativa de la autoescuela Vial Clic.',
 			url: 'http://www.vialclic.com'
-		},
-		{
-			image: 'larapita.webp',
-			name: 'Estació Nàutica Sant Carles de la Ràpita',
-			desc: 'Maquetación del portal web en Drupal de la Estació Nàutica Sant Carles de la Ràpita.',
-			url: 'https://web.archive.org/web/20160602233151/http://www.enlarapita.com/es'
 		}
 	]
 
@@ -68,7 +68,7 @@ function Projects({ onScrollInOut }: { onScrollInOut: (page: string) => void }):
 	useMotionValueEvent(scrollYProgress, 'change', latest => {
 		if (latest > 0.1) {
 			onScrollInOut('projects')
-		}else{
+		} else {
 			onScrollInOut('aboutme')
 		}
 	})
